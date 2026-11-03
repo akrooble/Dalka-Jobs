@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"inverse-primary":"#c3c0ff","surface":"#f9f9ff","on-primary-fixed":"#0f0069","on-tertiary-fixed":"#2a1700","primary-fixed-dim":"#c3c0ff","background":"#f9f9ff","outline-variant":"#c7c4d8","tertiary-container":"#935c00","on-tertiary-fixed-variant":"#653e00","on-secondary-fixed":"#002113","inverse-surface":"#293040","secondary-fixed-dim":"#4edea3","error":"#ba1a1a","secondary-fixed":"#6ffbbe","surface-container":"#e9edff","outline":"#777587","on-surface-variant":"#464555","surface-container-lowest":"#ffffff","primary-fixed":"#e2dfff","tertiary-fixed-dim":"#ffb95f","on-tertiary-container":"#ffe4c7","on-surface":"#141b2b","on-primary":"#ffffff","surface-container-highest":"#dce2f7","on-secondary-fixed-variant":"#005236","surface-container-low":"#f1f3ff","on-primary-container":"#e9e5ff","secondary-container":"#6cf8bb","on-background":"#141b2b","primary-container":"#5850ec","surface-dim":"#d3daef","tertiary":"#724700","on-error-container":"#93000a","surface-variant":"#dce2f7","on-error":"#ffffff","error-container":"#ffdad6","secondary":"#006c49","surface-tint":"#4e44e2","surface-bright":"#f9f9ff","on-secondary":"#ffffff","primary":"#3e32d3","inverse-on-surface":"#edf0ff","tertiary-fixed":"#ffddb8","on-primary-fixed-variant":"#3424ca","on-secondary-container":"#00714d","surface-container-high":"#e1e8fd","on-tertiary":"#ffffff"},borderRadius:{DEFAULT:"0.25rem",lg:"0.5rem",xl:"0.75rem",full:"9999px"},spacing:{gutter:"1.25rem","space-sm":"0.5rem",margin:"2rem","margin-mobile":"1rem","gutter-mobile":"0.75rem","space-xl":"2.5rem","space-xs":"0.25rem","space-md":"1rem","space-lg":"1.5rem"},fontFamily:{"label-sm":["Geist"],"headline-xl":["Space Grotesk"],"headline-xl-mobile":["Space Grotesk"],"headline-sm":["Space Grotesk"],"headline-lg":["Space Grotesk"],"headline-lg-mobile":["Space Grotesk"],"headline-md":["Space Grotesk"],"label-md":["Geist"],"body-md":["Geist"],"body-lg":["Geist"],"body-sm":["Geist"]},fontSize:{"label-sm":["11px",{lineHeight:"14px",letterSpacing:"0.04em",fontWeight:"600"}],"headline-xl":["44px",{lineHeight:"52px",letterSpacing:"-0.03em",fontWeight:"700"}],"headline-xl-mobile":["30px",{lineHeight:"36px",letterSpacing:"-0.02em",fontWeight:"700"}],"headline-sm":["18px",{lineHeight:"24px",letterSpacing:"0em",fontWeight:"600"}],"headline-lg":["32px",{lineHeight:"40px",letterSpacing:"-0.02em",fontWeight:"600"}],"headline-lg-mobile":["24px",{lineHeight:"30px",letterSpacing:"-0.01em",fontWeight:"600"}],"headline-md":["22px",{lineHeight:"28px",letterSpacing:"-0.01em",fontWeight:"600"}],"label-md":["13px",{lineHeight:"18px",letterSpacing:"0.02em",fontWeight:"600"}],"body-md":["14px",{lineHeight:"20px",fontWeight:"400"}],"body-lg":["16px",{lineHeight:"24px",fontWeight:"400"}],"body-sm":["12px",{lineHeight:"16px",fontWeight:"400"}]}}}};</script></head><body class="bg-background font-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 z-50 bg-surface/90 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-20 max-w-7xl mx-auto px-margin flex items-center justify-between gap-space-lg"><div class="flex items-center gap-space-xl"><a class="flex items-center gap-space-sm" data-path="find-jobs" href="#"><div class="w-9 h-9 bg-primary flex items-center justify-center text-on-primary font-headline-sm text-headline-sm uppercase tracking-wider">D</div><span class="font-headline-md text-headline-md font-bold tracking-tight text-on-surface">DALKA<span class="text-primary">JOBS</span></span></a><nav class="hidden xl:flex items-center gap-space-lg" data-active-classes="text-primary font-bold"><a aria-current="page" class="tracking-normal transition-colors text-primary font-bold" data-path="find-jobs" href="#">Find Jobs</a><a class="text-on-surface-variant hover:text-on-surface font-label-md text-label-md tracking-normal transition-colors" data-path="companies" href="#">Companies</a><a class="text-on-surface-variant hover:text-on-surface font-label-md text-label-md tracking-normal transition-colors" data-path="salaries" href="#">Salaries</a><a class="text-on-surface-variant hover:text-on-surface font-label-md text-label-md tracking-normal transition-colors" data-path="career-advice" href="#">Career Advice</a></nav></div><div class="flex items-center gap-space-md"><div class="hidden md:flex items-center gap-space-xs bg-surface-container-low px-space-sm py-space-xs"><span class="material-symbols-outlined text-outline text-[18px]">public</span><span class="font-label-sm text-label-sm text-on-surface uppercase">SO / EN</span><span class="text-outline font-label-sm text-label-sm">|</span><button class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface uppercase" type="button">SOOMAALI</button></div><a class="hidden sm:inline-flex items-center justify-center px-space-md py-space-sm font-label-md text-label-md text-on-surface bg-surface-container-low hover:bg-surface-container hover:text-on-surface transition-colors" data-path="sign-in" href="#">Sign In</a><a class="inline-flex items-center justify-center px-space-md py-space-sm font-label-md text-label-md text-on-primary bg-primary-container hover:bg-primary hover:text-on-primary transition-all shadow-[2px_2px_0px_#141b2b]" data-path="post-a-job" href="#">Post a Job</a><div class="flex items-center pl-space-xs"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1X8pu8Il0WjWPSG3ZazaN1uDXmOiJBCwL0x1v4YVvIrgIG8oh6A2_spuyCcqUWKJfaArO7sJxy6uz3SnFlBEIJRRsYH_DWPfuUAv-7YAWnIS2HYSRmw8IQO86Z_PQ5hoJ6LUszsrRzpyI8yBjoovIJQ-nEnID4lICbSHOGTqakzjlQm9UEFtRfEnEgijUnZrHAUJMe8zSuRm2yenH8-XQzfiOXrj_8hghaZac0KKhp6midhOgLJmp2200Fu"/></div></div></div></header><main class="w-full pt-20 bg-background min-h-screen"><div class="flex flex-col w-full">
+<!-- HERO SECTION WITH INTEGRATED SEARCH -->
+<section class="relative w-full bg-surface-container-low border-b border-outline-variant/30 py-space-xl overflow-hidden">
+<!-- Subtle technical grid backdrop overlay -->
+<div class="absolute inset-0 opacity-[0.03] pointer-events-none bg-[radial-gradient(#141b2b_1px,transparent_1px)] [background-size:16px_16px]"></div>
+<div class="max-w-7xl mx-auto px-margin relative z-10">
+<!-- Institutional Top Label & Badges -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm mb-space-md">
+<div class="inline-flex items-center gap-space-xs bg-surface-container-lowest px-space-sm py-1 shadow-sm border border-outline-variant/40">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Live Employment Exchange • Somalia &amp; Horn of Africa</span>
+</div>
+<div class="flex items-center gap-space-md text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-secondary text-[16px]">verified_user</span> ISO/UN-Standard Verified Feed</span>
+<span class="text-outline">/</span>
+<span>Updated Every 15 Mins</span>
+</div>
+</div>
+<!-- Main Headline & Subtitle -->
+<div class="max-w-4xl mb-space-xl">
+<h1 class="font-headline-xl text-headline-xl text-on-surface tracking-tight mb-space-sm">
+          Connecting Somalia’s Top Talent with <span class="text-primary underline decoration-primary/40 underline-offset-8">Verified Opportunities</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl leading-relaxed">
+          Explore vetted positions across humanitarian agencies, national telecommunications, financial institutions, and fast-growing tech enterprises with zero recruitment fraud.
+        </p>
+</div>
+<!-- Neo-Technical Integrated Search Bar -->
+<div class="bg-surface-container-lowest p-space-xs shadow-md border border-outline-variant/60 max-w-6xl">
+<form class="grid grid-cols-1 md:grid-cols-12 gap-1" onsubmit="event.preventDefault();">
+<!-- Keyword Input -->
+<div class="md:col-span-4 flex items-center bg-surface px-space-md py-space-sm border border-outline-variant/30 focus-within:border-primary transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant mr-space-xs text-[20px]">search</span>
+<input class="w-full bg-transparent border-0 outline-none text-on-surface font-body-md text-body-md placeholder:text-on-surface-variant/60" placeholder="Job title, skill, or keyword (e.g. Core Network, WASH)" type="text"/>
+</div>
+<!-- Region Dropdown -->
+<div class="md:col-span-3 flex items-center bg-surface px-space-md py-space-sm border border-outline-variant/30 focus-within:border-primary transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant mr-space-xs text-[20px]">location_on</span>
+<select class="w-full bg-transparent border-0 outline-none text-on-surface font-body-md text-body-md cursor-pointer">
+<option value="">All Regions / Cities</option>
+<option value="mogadishu">Mogadishu (Banaadir)</option>
+<option value="hargeisa">Hargeisa (Maroodi Jeex)</option>
+<option value="garowe">Garowe (Puntland)</option>
+<option value="bosaso">Bosaso (Bari)</option>
+<option value="kismayo">Kismayo (Jubaland)</option>
+<option value="baidoa">Baidoa (South West)</option>
+<option value="remote">Remote Somalia</option>
+</select>
+</div>
+<!-- Category Dropdown -->
+<div class="md:col-span-3 flex items-center bg-surface px-space-md py-space-sm border border-outline-variant/30 focus-within:border-primary transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant mr-space-xs text-[20px]">category</span>
+<select class="w-full bg-transparent border-0 outline-none text-on-surface font-body-md text-body-md cursor-pointer">
+<option value="">All Sectors &amp; Domains</option>
+<option value="telecom">Telecommunications</option>
+<option value="humanitarian">Humanitarian &amp; NGO</option>
+<option value="fintech">FinTech &amp; Banking</option>
+<option value="healthcare">Healthcare &amp; Public Health</option>
+<option value="education">Education &amp; Training</option>
+<option value="it">IT &amp; Software Engineering</option>
+</select>
+</div>
+<!-- CTA Search Button -->
+<div class="md:col-span-2">
+<button class="w-full h-full min-h-[50px] bg-primary text-on-primary font-headline-sm text-label-md flex items-center justify-center gap-space-xs hover:bg-primary-container transition-all active:translate-x-0.5 active:translate-y-0.5 shadow-[2px_2px_0px_#141b2b]" type="submit">
+<span class="material-symbols-outlined text-[18px]">travel_explore</span>
+<span>Search Jobs</span>
+</button>
+</div>
+</form>
+</div>
+<!-- Popular Tags & Quick Links -->
+<div class="mt-space-md flex flex-wrap items-center gap-space-xs font-label-sm text-label-sm">
+<span class="text-on-surface-variant uppercase tracking-wider font-semibold mr-space-xs">Popular Queries:</span>
+<a class="bg-surface-container px-space-sm py-1 text-on-surface hover:bg-surface-container-high transition-colors" href="#un">UN Agencies</a>
+<a class="bg-surface-container px-space-sm py-1 text-on-surface hover:bg-surface-container-high transition-colors" href="#hormuud">Hormuud</a>
+<a class="bg-surface-container px-space-sm py-1 text-on-surface hover:bg-surface-container-high transition-colors" href="#telesom">Telesom</a>
+<a class="bg-surface-container px-space-sm py-1 text-on-surface hover:bg-surface-container-high transition-colors" href="#dahabshiil">Dahabshiil</a>
+<a class="bg-surface-container px-space-sm py-1 text-on-surface hover:bg-surface-container-high transition-colors" href="#wash">WASH Project</a>
+<a class="bg-surface-container px-space-sm py-1 text-on-surface hover:bg-surface-container-high transition-colors" href="#finance">Finance Officer</a>
+<a class="bg-surface-container px-space-sm py-1 text-on-surface hover:bg-surface-container-high transition-colors" href="#remote-it">Remote IT</a>
+</div>
+</div>
+</section>
+<!-- SOCIAL PROOF & STATS BANNER STRIP -->
+<section class="w-full bg-surface-container-lowest border-b border-outline-variant/30 py-space-md shadow-sm">
+<div class="max-w-7xl mx-auto px-margin">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-gutter divide-x divide-outline-variant/20">
+<div class="px-space-md flex flex-col">
+<span class="font-headline-lg text-headline-lg text-primary font-bold tracking-tight">1,420+</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Active Verified Jobs</span>
+</div>
+<div class="px-space-md flex flex-col">
+<span class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight">380+</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Accredited Employers</span>
+</div>
+<div class="px-space-md flex flex-col">
+<span class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight">45,000+</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Somali Professionals</span>
+</div>
+<div class="px-space-md flex flex-col">
+<span class="font-headline-lg text-headline-lg text-secondary font-bold tracking-tight flex items-center gap-1">
+            98.9%
+            <span class="material-symbols-outlined text-[20px]">format_image_left</span>
+</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Spam-Free Verified Postings</span>
+</div>
+</div>
+</div>
+</section>
+<!-- TWO-COLUMN WORKSPACE: LEFT FILTERS + RIGHT JOB FEED -->
+<section class="w-full py-space-xl bg-background">
+<div class="max-w-7xl mx-auto px-margin">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- ======================= LEFT FILTER SIDEBAR ======================= -->
+<aside class="lg:col-span-4 xl:col-span-3 sticky top-24 space-y-space-md">
+<div class="bg-surface-container-lowest p-space-md shadow-sm border border-outline-variant/40">
+<!-- Sidebar Header -->
+<div class="flex items-center justify-between pb-space-sm border-b border-outline-variant/30 mb-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">tune</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Filter Results</h3>
+</div>
+<button class="font-label-sm text-label-sm text-primary hover:underline" type="button">Reset all</button>
+</div>
+<!-- Instant Toggle: Closing Soon -->
+<div class="mb-space-lg p-space-sm bg-surface-container-low flex items-center justify-between">
+<div>
+<span class="font-label-md text-label-md text-on-surface block">Closing Within 7 Days</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Urgent applications</span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-9 h-5 bg-outline-variant peer-focus:outline-none rounded-none peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-surface-container-lowest after:border-gray-300 after:border after:h-4 after:w-4 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<!-- Verified Only Highlight Box -->
+<div class="mb-space-lg p-space-sm bg-secondary-fixed/20 border border-secondary/30">
+<label class="flex items-start gap-space-xs cursor-pointer">
+<input checked="" class="mt-1 w-4 h-4 text-secondary bg-surface-container-lowest border-outline rounded-none focus:ring-0" type="checkbox"/>
+<div>
+<span class="font-label-md text-label-md text-secondary font-bold flex items-center gap-1">
+                    Verified Employers Only
+                    <span class="material-symbols-outlined text-[16px]">verified</span>
+</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant block mt-0.5">Filter out unauthenticated private postings</span>
+</div>
+</label>
+</div>
+<!-- Location Filter Group -->
+<div class="mb-space-lg border-b border-outline-variant/30 pb-space-md">
+<h4 class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant mb-space-sm">Location / Regional State</h4>
+<div class="space-y-space-xs font-body-md text-body-md text-on-surface">
+<label class="flex items-center justify-between hover:bg-surface-container-low px-1 py-0.5 cursor-pointer">
+<div class="flex items-center gap-2">
+<input checked="" class="w-4 h-4 rounded-none text-primary border-outline" type="checkbox"/>
+<span>Mogadishu (Banaadir)</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant bg-surface-container px-1.5">684</span>
+</label>
+<label class="flex items-center justify-between hover:bg-surface-container-low px-1 py-0.5 cursor-pointer">
+<div class="flex items-center gap-2">
+<input checked="" class="w-4 h-4 rounded-none text-primary border-outline" type="checkbox"/>
+<span>Hargeisa (Somaliland)</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant bg-surface-container px-1.5">342</span>
+</label>
+<label class="flex items-center justify-between hover:bg-surface-container-low px-1 py-0.5 cursor-pointer">
+<div class="flex items-center gap-2">
+<input class="w-4 h-4 rounded-none text-primary border-outline" type="checkbox"/>
+<span>Garowe (Puntland)</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant bg-surface-container px-1.5">180</span>
+</label>
+<label class="flex items-center justify-between hover:bg-surface-container-low px-1 py-0.5 cursor-pointer">
+<div class="flex items-center gap-2">
+<input class="w-4 h-4 rounded-none text-primary border-outline" type="checkbox"/>
+<span>Kismayo (Jubaland)</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant bg-surface-container px-1.5">95</span>
+</label>
+<label class="flex items-center justify-between hover:bg-surface-container-low px-1 py-0.5 cursor-pointer">
+<div class="flex items-center gap-2">
+<input class="w-4 h-4 rounded-none text-primary border-outline" type="checkbox"/>
+<span>Baidoa (South West)</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant bg-surface-container px-1.5">78</span>
+</label>
+<label class="flex items-center justify-between hover:bg-surface-container-low px-1 py-0.5 cursor-pointer">
+<div class="flex items-center gap-2">
+<input class="w-4 h-4 rounded-none text-primary border-outline" type="checkbox"/>
+<span>Remote in Somalia</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant bg-surface-container px-1.5">120</span>
+</label>
+</div>
+</div>
+<!-- Employer Sector Filter Group -->
+<div class="mb-space-lg border-b border-outline-variant/30 pb-space-md">
+<h4 class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant mb-space-sm">Employer Classification</h4>
+<div class="space-y-space-xs font-body-md text-body-md text-on-surface">
+<label class="flex items-center gap-2 hover:bg-surface-container-low px-1 py-0.5 cursor-pointer">
+<input checked="" class="w-4 h-4 rounded-none text-primary border-outline" type="checkbox"/>
+<span>NGO &amp; UN Agencies</span>
+</label>
+<label class="flex items-center gap-2 hover:bg-surface-container-low px-1 py-0.5 cursor-pointer">
+<input checked="" class="w-4 h-4 rounded-none text-primary border-outline" type="checkbox"/>
+<span>Private Enterprises</span>
+</label>
+<label class="flex items-center gap-2 hover:bg-surface-container-low px-1 py-0.5 cursor-pointer">
+<input class="w-4 h-4 rounded-none text-primary border-outline" type="checkbox"/>
+<span>Financial Institutions &amp; Banks</span>
+</label>
+<label class="flex items-center gap-2 hover:bg-surface-container-low px-1 py-0.5 cursor-pointer">
+<input class="w-4 h-4 rounded-none text-primary border-outline" type="checkbox"/>
+<span>Government &amp; Public Sector</span>
+</label>
+<label class="flex items-center gap-2 hover:bg-surface-container-low px-1 py-0.5 cursor-pointer">
+<input class="w-4 h-4 rounded-none text-primary border-outline" type="checkbox"/>
+<span>Tech Startups</span>
+</label>
+</div>
+</div>
+<!-- Job Contract Type -->
+<div class="mb-space-lg border-b border-outline-variant/30 pb-space-md">
+<h4 class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant mb-space-sm">Employment Type</h4>
+<div class="space-y-space-xs font-body-md text-body-md text-on-surface">
+<label class="flex items-center gap-2 hover:bg-surface-container-low px-1 py-0.5 cursor-pointer">
+<input checked="" class="w-4 h-4 rounded-none text-primary border-outline" type="checkbox"/>
+<span>Full-Time Postings</span>
+</label>
+<label class="flex items-center gap-2 hover:bg-surface-container-low px-1 py-0.5 cursor-pointer">
+<input checked="" class="w-4 h-4 rounded-none text-primary border-outline" type="checkbox"/>
+<span>Contract &amp; Fixed-Term</span>
+</label>
+<label class="flex items-center gap-2 hover:bg-surface-container-low px-1 py-0.5 cursor-pointer">
+<input class="w-4 h-4 rounded-none text-primary border-outline" type="checkbox"/>
+<span>Consultancy / Advisory</span>
+</label>
+<label class="flex items-center gap-2 hover:bg-surface-container-low px-1 py-0.5 cursor-pointer">
+<input class="w-4 h-4 rounded-none text-primary border-outline" type="checkbox"/>
+<span>Internship / Graduate Trainee</span>
+</label>
+</div>
+</div>
+<!-- Experience Level -->
+<div>
+<h4 class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant mb-space-sm">Experience Bracket</h4>
+<div class="space-y-space-xs font-body-md text-body-md text-on-surface">
+<label class="flex items-center gap-2 cursor-pointer">
+<input class="w-4 h-4 rounded-none text-primary border-outline" type="checkbox"/>
+<span>Entry Level (0-2 Yrs)</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer">
+<input checked="" class="w-4 h-4 rounded-none text-primary border-outline" type="checkbox"/>
+<span>Mid Level (3-5 Yrs)</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer">
+<input checked="" class="w-4 h-4 rounded-none text-primary border-outline" type="checkbox"/>
+<span>Senior (6+ Yrs)</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer">
+<input class="w-4 h-4 rounded-none text-primary border-outline" type="checkbox"/>
+<span>Executive / C-Suite</span>
+</label>
+</div>
+</div>
+</div>
+<!-- Institutional Recruitment Guarantee Card -->
+<div class="bg-surface-container p-space-md border-l-4 border-primary">
+<div class="flex items-center gap-space-xs mb-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">policy</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Somali Labour Integrity</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm">
+              All listed vacancies conform to the Ministry of Labour &amp; Social Affairs standards. Organizations never request recruitment fees from jobseekers.
+            </p>
+<a class="font-label-sm text-label-sm text-primary uppercase font-bold tracking-wider hover:underline" href="#">Report Unverified Fee →</a>
+</div>
+</aside>
+<!-- ======================= RIGHT FEED & LISTINGS ======================= -->
+<main class="lg:col-span-8 xl:col-span-9 flex flex-col space-y-space-md">
+<!-- Feed Controls & Sort Header -->
+<div class="bg-surface-container-lowest p-space-md shadow-sm border border-outline-variant/40 flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div>
+<div class="flex items-center gap-space-xs">
+<h2 class="font-headline-md text-headline-md text-on-surface">Showing 1,420 Jobs in Somalia</h2>
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+</div>
+<!-- Active Filter Pills -->
+<div class="flex flex-wrap items-center gap-space-xs mt-space-xs">
+<span class="inline-flex items-center gap-1 bg-surface-container px-space-sm py-0.5 font-label-sm text-label-sm text-on-surface">
+                  All Locations
+                  <button class="hover:text-error" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1 bg-secondary-fixed/30 text-secondary px-space-sm py-0.5 font-label-sm text-label-sm">
+                  Verified Only
+                  <button class="hover:text-error" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1 bg-surface-container px-space-sm py-0.5 font-label-sm text-label-sm text-on-surface">
+                  Closing &lt; 7 Days
+                  <button class="hover:text-error" type="button">×</button>
+</span>
+<button class="font-label-sm text-label-sm text-primary hover:underline ml-1" type="button">Clear All</button>
+</div>
+</div>
+<!-- Sorting Dropdown -->
+<div class="flex items-center gap-space-xs self-start md:self-auto">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Sort By:</span>
+<div class="relative bg-surface-container-low px-space-sm py-1 border border-outline-variant/30">
+<select class="bg-transparent border-0 outline-none text-on-surface font-label-md text-label-md cursor-pointer pr-4">
+<option value="recent">Most Recent Postings</option>
+<option selected="" value="closing">Closing Soonest</option>
+<option value="verified">Verified Employer First</option>
+<option value="salary">Highest Compensation</option>
+</select>
+</div>
+</div>
+</div>
+<!-- ================= JOB CARD 1: Hormuud Telecom ================= -->
+<article class="bg-surface-container-lowest border-l-4 border-l-primary border border-outline-variant/30 shadow-sm p-space-md hover:shadow-md hover:border-on-surface transition-all group">
+<div class="flex flex-col md:flex-row md:items-start justify-between gap-space-md">
+<div class="flex items-start gap-space-md">
+<!-- Company Avatar -->
+<div class="w-14 h-14 bg-surface-container-high flex-shrink-0 flex items-center justify-center border border-outline-variant/30 relative">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">HT</span>
+</div>
+<div>
+<div class="flex flex-wrap items-center gap-space-xs mb-1">
+<span class="font-label-md text-label-md font-bold text-on-surface">Hormuud Telecom</span>
+<span class="inline-flex items-center gap-1 bg-secondary-fixed/40 text-on-secondary-fixed-variant px-1.5 py-0.5 font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px] text-secondary">verified</span>
+                      Verified Enterprise
+                    </span>
+<span class="inline-flex items-center gap-1 bg-tertiary-fixed text-on-tertiary-fixed px-1.5 py-0.5 font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">timer</span>
+                      Closing in 3 days
+                    </span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors">
+                    Senior Core Network &amp; 5G Systems Engineer
+                  </h3>
+<div class="flex flex-wrap items-center gap-space-md mt-space-xs text-on-surface-variant font-body-sm text-body-sm">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">location_on</span> Mogadishu, Somalia</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">work</span> Full-Time</span>
+<span class="flex items-center gap-1 font-semibold text-on-surface"><span class="material-symbols-outlined text-[16px] text-primary">payments</span> $1,800 – $2,600 / mo</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">schedule</span> Posted 2 days ago</span>
+</div>
+</div>
+</div>
+<!-- Action CTAs -->
+<div class="flex md:flex-col items-center md:items-end justify-between gap-space-xs self-stretch md:self-auto border-t md:border-t-0 pt-space-sm md:pt-0 border-outline-variant/20">
+<button class="p-1.5 text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors" title="Bookmark Job" type="button">
+<span class="material-symbols-outlined text-[20px]">bookmark_border</span>
+</button>
+<a class="px-space-md py-space-xs bg-primary text-on-primary font-label-md text-label-md hover:bg-primary-container shadow-[2px_2px_0px_#141b2b] transition-all" href="#apply">
+                  Apply Now
+                </a>
+</div>
+</div>
+<!-- Excerpt & Instructions -->
+<div class="mt-space-md pt-space-sm border-t border-outline-variant/20 flex flex-col md:flex-row md:items-center justify-between gap-space-sm">
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2 md:max-w-2xl">
+                Responsible for architectural design, capacity expansion, and 5G non-standalone RAN integration across nationwide cellular towers. Requires deep expertise in IMS core, EPC, and micro-wave transmission.
+              </p>
+<div class="bg-surface-container-low px-space-sm py-1 font-label-sm text-label-sm text-on-surface-variant border border-outline-variant/30 flex items-center gap-1 whitespace-nowrap">
+<span class="material-symbols-outlined text-[16px] text-primary">launch</span>
+<span>How to apply: <strong>Official Carrier Portal</strong></span>
+</div>
+</div>
+</article>
+<!-- ================= JOB CARD 2: UNICEF Somalia ================= -->
+<article class="bg-surface-container-lowest border-l-4 border-l-secondary border border-outline-variant/30 shadow-sm p-space-md hover:shadow-md hover:border-on-surface transition-all group">
+<div class="flex flex-col md:flex-row md:items-start justify-between gap-space-md">
+<div class="flex items-start gap-space-md">
+<!-- Company Avatar -->
+<div class="w-14 h-14 bg-surface-container-high flex-shrink-0 flex items-center justify-center border border-outline-variant/30">
+<span class="font-headline-sm text-headline-sm text-secondary font-bold">UN</span>
+</div>
+<div>
+<div class="flex flex-wrap items-center gap-space-xs mb-1">
+<span class="font-label-md text-label-md font-bold text-on-surface">UNICEF Somalia</span>
+<span class="inline-flex items-center gap-1 bg-secondary-fixed/40 text-on-secondary-fixed-variant px-1.5 py-0.5 font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px] text-secondary">verified</span>
+                      UN Accredited Body
+                    </span>
+<span class="inline-flex items-center gap-1 bg-surface-container px-1.5 py-0.5 font-label-sm text-label-sm text-on-surface">
+<span class="material-symbols-outlined text-[14px]">event</span>
+                      Closing: May 15, 2025
+                    </span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors">
+                    Chief of Field Office &amp; Emergency Coordinator
+                  </h3>
+<div class="flex flex-wrap items-center gap-space-md mt-space-xs text-on-surface-variant font-body-sm text-body-sm">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">location_on</span> Garowe, Puntland</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">work</span> Fixed-Term Contract</span>
+<span class="flex items-center gap-1 font-semibold text-on-surface"><span class="material-symbols-outlined text-[16px] text-primary">payments</span> UN P-4 Salary Scale + Hardship</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">schedule</span> Posted 4 days ago</span>
+</div>
+</div>
+</div>
+<!-- Action CTAs -->
+<div class="flex md:flex-col items-center md:items-end justify-between gap-space-xs self-stretch md:self-auto border-t md:border-t-0 pt-space-sm md:pt-0 border-outline-variant/20">
+<button class="p-1.5 text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors" title="Bookmark Job" type="button">
+<span class="material-symbols-outlined text-[20px]">bookmark_border</span>
+</button>
+<a class="px-space-md py-space-xs bg-primary text-on-primary font-label-md text-label-md hover:bg-primary-container shadow-[2px_2px_0px_#141b2b] transition-all" href="#apply">
+                  Apply Now
+                </a>
+</div>
+</div>
+<!-- Excerpt & Instructions -->
+<div class="mt-space-md pt-space-sm border-t border-outline-variant/20 flex flex-col md:flex-row md:items-center justify-between gap-space-sm">
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2 md:max-w-2xl">
+                Leads UNICEF's cross-sectoral humanitarian response and development programmes across Puntland. Oversight of emergency WASH, child protection protocols, and nutrition cluster interventions.
+              </p>
+<div class="bg-surface-container-low px-space-sm py-1 font-label-sm text-label-sm text-on-surface-variant border border-outline-variant/30 flex items-center gap-1 whitespace-nowrap">
+<span class="material-symbols-outlined text-[16px] text-primary">launch</span>
+<span>How to apply: <strong>UN Inspira / Direct Link</strong></span>
+</div>
+</div>
+</article>
+<!-- ================= JOB CARD 3: Premier Bank ================= -->
+<article class="bg-surface-container-lowest border-l-4 border-l-primary border border-outline-variant/30 shadow-sm p-space-md hover:shadow-md hover:border-on-surface transition-all group">
+<div class="flex flex-col md:flex-row md:items-start justify-between gap-space-md">
+<div class="flex items-start gap-space-md">
+<!-- Company Avatar -->
+<div class="w-14 h-14 bg-surface-container-high flex-shrink-0 flex items-center justify-center border border-outline-variant/30">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">PB</span>
+</div>
+<div>
+<div class="flex flex-wrap items-center gap-space-xs mb-1">
+<span class="font-label-md text-label-md font-bold text-on-surface">Premier Bank Somalia</span>
+<span class="inline-flex items-center gap-1 bg-secondary-fixed/40 text-on-secondary-fixed-variant px-1.5 py-0.5 font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px] text-secondary">verified</span>
+                      Central Bank Licensed
+                    </span>
+<span class="inline-flex items-center gap-1 bg-tertiary-fixed text-on-tertiary-fixed px-1.5 py-0.5 font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">timer</span>
+                      Closing in 5 days
+                    </span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors">
+                    Head of Mobile Money Compliance &amp; AML
+                  </h3>
+<div class="flex flex-wrap items-center gap-space-md mt-space-xs text-on-surface-variant font-body-sm text-body-sm">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">location_on</span> Mogadishu Head Office</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">work</span> Full-Time</span>
+<span class="flex items-center gap-1 font-semibold text-on-surface"><span class="material-symbols-outlined text-[16px] text-primary">payments</span> Competitive Executive Package</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">schedule</span> Posted 1 day ago</span>
+</div>
+</div>
+</div>
+<!-- Action CTAs -->
+<div class="flex md:flex-col items-center md:items-end justify-between gap-space-xs self-stretch md:self-auto border-t md:border-t-0 pt-space-sm md:pt-0 border-outline-variant/20">
+<button class="p-1.5 text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors" title="Bookmark Job" type="button">
+<span class="material-symbols-outlined text-[20px]">bookmark_border</span>
+</button>
+<a class="px-space-md py-space-xs bg-primary text-on-primary font-label-md text-label-md hover:bg-primary-container shadow-[2px_2px_0px_#141b2b] transition-all" href="#apply">
+                  Apply Now
+                </a>
+</div>
+</div>
+<!-- Excerpt & Instructions -->
+<div class="mt-space-md pt-space-sm border-t border-outline-variant/20 flex flex-col md:flex-row md:items-center justify-between gap-space-sm">
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2 md:max-w-2xl">
+                Manage anti-money laundering, KYC frameworks, and institutional transaction audits across swift corridors and national mobile wallet integrations in full adherence to CBS regulation.
+              </p>
+<div class="bg-surface-container-low px-space-sm py-1 font-label-sm text-label-sm text-on-surface-variant border border-outline-variant/30 flex items-center gap-1 whitespace-nowrap">
+<span class="material-symbols-outlined text-[16px] text-primary">mail</span>
+<span>How to apply: <strong>careers@premierbank.so</strong></span>
+</div>
+</div>
+</article>
+<!-- ================= JOB CARD 4: Dahabshiil Group ================= -->
+<article class="bg-surface-container-lowest border-l-4 border-l-primary border border-outline-variant/30 shadow-sm p-space-md hover:shadow-md hover:border-on-surface transition-all group">
+<div class="flex flex-col md:flex-row md:items-start justify-between gap-space-md">
+<div class="flex items-start gap-space-md">
+<!-- Company Avatar -->
+<div class="w-14 h-14 bg-surface-container-high flex-shrink-0 flex items-center justify-center border border-outline-variant/30">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">DG</span>
+</div>
+<div>
+<div class="flex flex-wrap items-center gap-space-xs mb-1">
+<span class="font-label-md text-label-md font-bold text-on-surface">Dahabshiil Group</span>
+<span class="inline-flex items-center gap-1 bg-secondary-fixed/40 text-on-secondary-fixed-variant px-1.5 py-0.5 font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px] text-secondary">verified</span>
+                      Verified Enterprise
+                    </span>
+<span class="inline-flex items-center gap-1 bg-surface-container px-1.5 py-0.5 font-label-sm text-label-sm text-on-surface">
+<span class="material-symbols-outlined text-[14px]">event</span>
+                      Closing: May 28, 2025
+                    </span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors">
+                    Lead Software Architect (FinTech / Remittance)
+                  </h3>
+<div class="flex flex-wrap items-center gap-space-md mt-space-xs text-on-surface-variant font-body-sm text-body-sm">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">location_on</span> Hargeisa / Hybrid</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">work</span> Full-Time</span>
+<span class="flex items-center gap-1 font-semibold text-on-surface"><span class="material-symbols-outlined text-[16px] text-primary">payments</span> $2,200 – $3,500 / mo</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">schedule</span> Posted 3 days ago</span>
+</div>
+</div>
+</div>
+<!-- Action CTAs -->
+<div class="flex md:flex-col items-center md:items-end justify-between gap-space-xs self-stretch md:self-auto border-t md:border-t-0 pt-space-sm md:pt-0 border-outline-variant/20">
+<button class="p-1.5 text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors" title="Bookmark Job" type="button">
+<span class="material-symbols-outlined text-[20px]">bookmark_border</span>
+</button>
+<a class="px-space-md py-space-xs bg-primary text-on-primary font-label-md text-label-md hover:bg-primary-container shadow-[2px_2px_0px_#141b2b] transition-all" href="#apply">
+                  Apply Now
+                </a>
+</div>
+</div>
+<!-- Excerpt & Instructions -->
+<div class="mt-space-md pt-space-sm border-t border-outline-variant/20 flex flex-col md:flex-row md:items-center justify-between gap-space-sm">
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2 md:max-w-2xl">
+                Orchestrate microservices and event-driven distributed ledgers processing high-frequency regional remittances. Go, Kubernetes, and PCI-DSS compliance experience mandatory.
+              </p>
+<div class="bg-surface-container-low px-space-sm py-1 font-label-sm text-label-sm text-on-surface-variant border border-outline-variant/30 flex items-center gap-1 whitespace-nowrap">
+<span class="material-symbols-outlined text-[16px] text-primary">launch</span>
+<span>How to apply: <strong>Portal Application</strong></span>
+</div>
+</div>
+</article>
+<!-- ================= JOB CARD 5: WHO ================= -->
+<article class="bg-surface-container-lowest border-l-4 border-l-error border border-outline-variant/30 shadow-sm p-space-md hover:shadow-md hover:border-on-surface transition-all group">
+<div class="flex flex-col md:flex-row md:items-start justify-between gap-space-md">
+<div class="flex items-start gap-space-md">
+<!-- Company Avatar -->
+<div class="w-14 h-14 bg-surface-container-high flex-shrink-0 flex items-center justify-center border border-outline-variant/30">
+<span class="font-headline-sm text-headline-sm text-error font-bold">WHO</span>
+</div>
+<div>
+<div class="flex flex-wrap items-center gap-space-xs mb-1">
+<span class="font-label-md text-label-md font-bold text-on-surface">World Health Organization</span>
+<span class="inline-flex items-center gap-1 bg-secondary-fixed/40 text-on-secondary-fixed-variant px-1.5 py-0.5 font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px] text-secondary">verified</span>
+                      UN Entity
+                    </span>
+<span class="inline-flex items-center gap-1 bg-error-container text-on-error-container px-1.5 py-0.5 font-label-sm text-label-sm font-bold">
+<span class="material-symbols-outlined text-[14px]">warning</span>
+                      Urgent: Closes in 2 days
+                    </span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors">
+                    Public Health Specialist – Nutrition &amp; Epidemic Response
+                  </h3>
+<div class="flex flex-wrap items-center gap-space-md mt-space-xs text-on-surface-variant font-body-sm text-body-sm">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">location_on</span> Baidoa / South West</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">work</span> Contract (NO-B Level)</span>
+<span class="flex items-center gap-1 font-semibold text-on-surface"><span class="material-symbols-outlined text-[16px] text-primary">payments</span> UN NO-B Level Standard</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">schedule</span> Posted 5 days ago</span>
+</div>
+</div>
+</div>
+<!-- Action CTAs -->
+<div class="flex md:flex-col items-center md:items-end justify-between gap-space-xs self-stretch md:self-auto border-t md:border-t-0 pt-space-sm md:pt-0 border-outline-variant/20">
+<button class="p-1.5 text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors" title="Bookmark Job" type="button">
+<span class="material-symbols-outlined text-[20px]">bookmark_border</span>
+</button>
+<a class="px-space-md py-space-xs bg-primary text-on-primary font-label-md text-label-md hover:bg-primary-container shadow-[2px_2px_0px_#141b2b] transition-all" href="#apply">
+                  Apply Now
+                </a>
+</div>
+</div>
+<!-- Excerpt & Instructions -->
+<div class="mt-space-md pt-space-sm border-t border-outline-variant/20 flex flex-col md:flex-row md:items-center justify-between gap-space-sm">
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2 md:max-w-2xl">
+                Execute rapid surveillance for acute malnourishment clusters and cholera containment in drought-impacted internally displaced camps. Coordination with local state ministries.
+              </p>
+<div class="bg-surface-container-low px-space-sm py-1 font-label-sm text-label-sm text-on-surface-variant border border-outline-variant/30 flex items-center gap-1 whitespace-nowrap">
+<span class="material-symbols-outlined text-[16px] text-primary">launch</span>
+<span>How to apply: <strong>WHO Global Careers Portal</strong></span>
+</div>
+</div>
+</article>
+<!-- ================= JOB CARD 6: ACF ================= -->
+<article class="bg-surface-container-lowest border-l-4 border-l-primary border border-outline-variant/30 shadow-sm p-space-md hover:shadow-md hover:border-on-surface transition-all group">
+<div class="flex flex-col md:flex-row md:items-start justify-between gap-space-md">
+<div class="flex items-start gap-space-md">
+<!-- Company Avatar -->
+<div class="w-14 h-14 bg-surface-container-high flex-shrink-0 flex items-center justify-center border border-outline-variant/30">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">ACF</span>
+</div>
+<div>
+<div class="flex flex-wrap items-center gap-space-xs mb-1">
+<span class="font-label-md text-label-md font-bold text-on-surface">Action Against Hunger (ACF)</span>
+<span class="inline-flex items-center gap-1 bg-secondary-fixed/40 text-on-secondary-fixed-variant px-1.5 py-0.5 font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px] text-secondary">verified</span>
+                      International NGO
+                    </span>
+<span class="inline-flex items-center gap-1 bg-surface-container px-1.5 py-0.5 font-label-sm text-label-sm text-on-surface">
+<span class="material-symbols-outlined text-[14px]">event</span>
+                      Closing: Jun 02, 2025
+                    </span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors">
+                    Logistics &amp; Supply Chain Field Officer
+                  </h3>
+<div class="flex flex-wrap items-center gap-space-md mt-space-xs text-on-surface-variant font-body-sm text-body-sm">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">location_on</span> Kismayo, Jubaland</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">work</span> Full-Time</span>
+<span class="flex items-center gap-1 font-semibold text-on-surface"><span class="material-symbols-outlined text-[16px] text-primary">payments</span> Competitive INGO Scale</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">schedule</span> Posted 6 days ago</span>
+</div>
+</div>
+</div>
+<!-- Action CTAs -->
+<div class="flex md:flex-col items-center md:items-end justify-between gap-space-xs self-stretch md:self-auto border-t md:border-t-0 pt-space-sm md:pt-0 border-outline-variant/20">
+<button class="p-1.5 text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors" title="Bookmark Job" type="button">
+<span class="material-symbols-outlined text-[20px]">bookmark_border</span>
+</button>
+<a class="px-space-md py-space-xs bg-primary text-on-primary font-label-md text-label-md hover:bg-primary-container shadow-[2px_2px_0px_#141b2b] transition-all" href="#apply">
+                  Apply Now
+                </a>
+</div>
+</div>
+<!-- Excerpt & Instructions -->
+<div class="mt-space-md pt-space-sm border-t border-outline-variant/20 flex flex-col md:flex-row md:items-center justify-between gap-space-sm">
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2 md:max-w-2xl">
+                Supervise warehousing, procurement compliance, and convoy movement protocols across southern riverine corridors. Fluency in Somali and working English required.
+              </p>
+<div class="bg-surface-container-low px-space-sm py-1 font-label-sm text-label-sm text-on-surface-variant border border-outline-variant/30 flex items-center gap-1 whitespace-nowrap">
+<span class="material-symbols-outlined text-[16px] text-primary">description</span>
+<span>How to apply: <strong>ACF Online Form</strong></span>
+</div>
+</div>
+</article>
+<!-- PAGINATION BAR -->
+<div class="bg-surface-container-lowest p-space-md shadow-sm border border-outline-variant/40 flex items-center justify-between mt-space-md">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Showing 1 – 6 of 1,420 positions</span>
+<div class="flex items-center gap-1">
+<button class="px-space-sm py-1 bg-surface-container-low border border-outline-variant/30 text-on-surface-variant disabled:opacity-50 font-label-sm text-label-sm" disabled="">← Prev</button>
+<button class="px-space-sm py-1 bg-primary text-on-primary font-label-sm text-label-sm">1</button>
+<button class="px-space-sm py-1 bg-surface-container-low border border-outline-variant/30 text-on-surface hover:bg-surface-container font-label-sm text-label-sm">2</button>
+<button class="px-space-sm py-1 bg-surface-container-low border border-outline-variant/30 text-on-surface hover:bg-surface-container font-label-sm text-label-sm">3</button>
+<span class="px-2 text-outline-variant">...</span>
+<button class="px-space-sm py-1 bg-surface-container-low border border-outline-variant/30 text-on-surface hover:bg-surface-container font-label-sm text-label-sm">48</button>
+<button class="px-space-sm py-1 bg-surface-container-low border border-outline-variant/30 text-on-surface hover:bg-surface-container font-label-sm text-label-sm">Next →</button>
+</div>
+</div>
+</main>
+</div>
+</div>
+</section>
+<!-- RECRUITER CTA & INSTITUTIONAL FOOTPRINT SECTION -->
+<section class="w-full bg-surface-container-lowest border-t border-outline-variant/30 py-space-xl">
+<div class="max-w-7xl mx-auto px-margin">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-space-lg items-center">
+<div class="md:col-span-8">
+<div class="inline-flex items-center gap-space-xs bg-surface-container px-space-sm py-1 font-label-sm text-label-sm text-primary uppercase font-bold tracking-wider mb-space-sm">
+            For Employers &amp; Institutional Recruiters
+          </div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight mb-space-sm">
+            Hiring in Somalia? Reach 45,000+ Pre-Vetted Professionals
+          </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+            Whether you are expanding a telecom infrastructure team, recruiting UN humanitarian specialists, or building a FinTech core, Dalka Jobs guarantees direct delivery to qualified candidates.
+          </p>
+<div class="flex flex-wrap items-center gap-space-md mt-space-lg">
+<a class="px-space-lg py-space-sm bg-primary text-on-primary font-headline-sm text-label-md hover:bg-primary-container shadow-[2px_2px_0px_#141b2b] transition-all" href="#">
+              Post an Open Job
+            </a>
+<a class="px-space-md py-space-sm bg-surface-container-low text-on-surface border border-outline-variant hover:bg-surface-container font-label-md text-label-md transition-all" href="#">
+              Enterprise Recruitment SLA
+            </a>
+</div>
+</div>
+<div class="md:col-span-4 bg-surface-container-low p-space-lg border border-outline-variant/40 flex flex-col justify-center">
+<div class="flex items-center gap-space-sm mb-space-md">
+<img alt="Verified Badge" class="w-12 h-12 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBA4yXBPPdL930ZYeDJtPEKCrvscoZKIeIsJUz7blqq2u5Ui4uW_p4sc09fvbvKmBWG4NshAoubFv3vqiVWr2qS2HziT0kKxv7T74-XFzn8btkbYWz7OwPYufmvO2Fdlv9XO9OhTlXTshBI7srHYKsWi_R8k4_hTMkFPQRbGQI5cy49g8qsK5n7JkwgLlyeHfUHlQauDXA3VDr6aNxhtYhH6-xfVMzDwDe0AfwhOShF_2UxfKRU8J7JdQ"/>
+<div>
+<span class="font-headline-sm text-headline-sm text-on-surface block">Accreditation Desk</span>
+<span class="font-body-sm text-body-sm text-secondary font-semibold">Somali Enterprise Registry</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+            Get your corporate profile badged to build immediate candidate trust and double your qualified applicant conversion rate.
+          </p>
+<div class="flex items-center gap-space-xs text-on-surface font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-secondary text-[18px]">verified</span>
+<span>Takes under 24 hours to verify</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div></main><footer class="w-full bg-surface-container-lowest pt-space-xl pb-space-lg mt-space-xl"><div class="max-w-7xl mx-auto px-margin"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-gutter pb-space-xl"><div class="lg:col-span-2 flex flex-col items-start pr-space-lg"><div class="flex items-center gap-space-sm mb-space-md"><div class="w-8 h-8 bg-primary flex items-center justify-center text-on-primary font-headline-sm text-headline-sm uppercase">D</div><span class="font-headline-md text-headline-md font-bold tracking-tight text-on-surface">DALKA<span class="text-primary">JOBS</span></span></div><p class="font-body-md text-body-md text-on-surface-variant mb-space-md max-w-sm">The premier recruitment and institutional employment infrastructure across Somalia and the Horn of Africa. Connecting verified organizations with top talent.</p><div class="flex items-center gap-space-sm bg-surface-container-low px-space-md py-space-sm"><span class="material-symbols-outlined text-secondary text-[20px]">verified</span><span class="font-label-sm text-label-sm text-on-surface">National Recruitment Registry Accredited</span></div></div><div><h4 class="font-headline-sm text-headline-sm text-on-surface mb-space-md uppercase">Top Cities</h4><ul class="space-y-space-xs"><li class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface"><a data-path="find-jobs" href="#">Mogadishu</a></li><li class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface"><a data-path="find-jobs" href="#">Hargeisa</a></li><li class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface"><a data-path="find-jobs" href="#">Bosaso</a></li><li class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface"><a data-path="find-jobs" href="#">Kismayo</a></li><li class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface"><a data-path="find-jobs" href="#">Garowe</a></li><li class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface"><a data-path="find-jobs" href="#">Baidoa</a></li></ul></div><div><h4 class="font-headline-sm text-headline-sm text-on-surface mb-space-md uppercase">Top Sectors</h4><ul class="space-y-space-xs"><li class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface"><a data-path="find-jobs" href="#">NGO &amp; UN Agencies</a></li><li class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface"><a data-path="find-jobs" href="#">Telecommunications</a></li><li class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface"><a data-path="find-jobs" href="#">Banking &amp; FinTech</a></li><li class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface"><a data-path="find-jobs" href="#">Healthcare</a></li><li class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface"><a data-path="find-jobs" href="#">Engineering</a></li></ul></div><div><h4 class="font-headline-sm text-headline-sm text-on-surface mb-space-md uppercase">Governance &amp; Trust</h4><ul class="space-y-space-xs"><li class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface"><a data-path="employer-verification" href="#">Employer Verification</a></li><li class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface"><a data-path="legal-compliance" href="#">Labour Law Compliance</a></li><li class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface"><a data-path="privacy-data" href="#">Data Privacy Standards</a></li><li class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface"><a data-path="api-access" href="#">Institutional APIs</a></li></ul></div></div><div class="pt-space-lg flex flex-col md:flex-row items-center justify-between gap-space-md"><p class="font-body-sm text-body-sm text-on-surface-variant">© 2025 Dalka Jobs Portal. Engineered for performance and transparency in East Africa.</p><div class="flex items-center gap-space-lg"><a class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface" data-path="privacy-data" href="#">Privacy</a><a class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface" data-path="legal-compliance" href="#">Terms</a><a class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface" data-path="career-advice" href="#">Support</a></div></div></div></footer></body></html>

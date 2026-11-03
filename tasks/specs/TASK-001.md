@@ -1,185 +1,241 @@
-# TASK-001 — Dalka Jobs version-1 requirements and proposed delivery
+# TASK-001 — Dalka Jobs version-1 specification
 
 ## Task ID
+
 TASK-001
 
 ## Title
-Define and deliver an English-language job website with advertising and delegated recruitment workflows.
+
+Somalia job board, applicant accounts, team recruitment and manual invoicing.
 
 ## Type
-Requirements and proposed new application. Current authorization covers specification only.
+
+Requirements and ordered delivery plan only; implementation unauthorized.
 
 ## Priority
-TBD by owner.
+
+Owner-requested version 1; delivery date/business ranking TBD.
 
 ## Problem Statement
-Dalka Jobs needs a public job website and admin panel. Some employers delegate publication and candidate interviews to Dalka Jobs; others use Dalka Jobs solely to advertise a job and direct visitors to the employer's application channel. These workflows must not imply that external applicants are known to Dalka Jobs.
+
+Publish Somalia jobs for NGOs, private companies and government, supporting external advertising and recruitment run by Dalka Jobs. External clicks cannot prove application completion.
 
 ## Current Behavior
-`README.md` contains only the project name. No application, dependencies, tests, database, authentication, or deployment configuration exists. Workflow documents and task artifacts are now tracked. Before this 2026-11-03 documentation revision, the working tree was clean on `main`.
 
-## Expected Behavior / Goal
-Visitors discover jobs in English on accessible, mobile-friendly pages. Admins create and manage listings. Each listing identifies its recruitment mode:
-- **Delegated recruitment:** the employer has authorized Dalka Jobs to publish and interview candidates. Dalka Jobs collects applications on its own site; admins can view applicants for that job and manage an agreed interview workflow.
-- **Advert only:** the apply action opens the employer-provided application/hiring URL or email destination. Dalka Jobs does not claim to know who applied or that an external application was completed.
+Documentation and ten Stitch reference screens/four logos exist; no application, manifests, database or runtime checks exist. Current checkout main has untracked design/TASK-002/TASK-003 work, preserved. Only this specification and TASK-001-log.md change now.
 
-## Root Cause (if known)
-UNKNOWN; this is a new product definition, not a diagnosed application defect.
+## Expected Behavior
+
+English-only, phone-first public/applicant site responsive on phone, tablet and desktop; desktop-first admin usable on tablet. Lightweight pages for slow mobile data, WCAG 2.2 AA target, text organized for later Somali. Deadline timezone Africa/Mogadishu; default currency USD.
+
+## Root Cause
+
+NOT APPLICABLE: product definition, not defect diagnosis.
 
 ## Repository Evidence
-- `README.md`: project name only.
-- `AGENTS.md`: initial repository discovery, absent tooling, safety and lifecycle rules.
-- `TASK_SPEC.md`: specification fields and approval gate.
-- `SMALL_TASKS.md`, `TASK_EXECUTOR.md`, `PR_REVIEW.md`, `PR_MERGE.md`: delivery and release contracts.
-- User requirements in this conversation: admin-managed jobs; two recruitment modes; English; accepted suggested job fields, browsing features, admin features, and privacy/security defaults; requested stack proposal; explicitly excluded hosting research and implementation.
 
-## Scope
-### Confirmed requirements
-- English public job list and detail pages, keyword search, location/category filters, and apply actions.
-- Admin job creation/editing, draft/publish/archive, closing dates, and per-job applicant visibility for delegated recruitment.
-- Job fields: title, employer, description, location, category, employment type, work arrangement, optional salary, closing date, and applicable application destination.
-- Delegated applicant form: name and email, optional phone; no CV uploads in version 1, following the accepted suggestion.
-- Mobile-friendly pages targeting WCAG 2.2 AA.
-- Go-backend account/session authentication with TOTP MFA for admins; restricted applicant access; clear consent before collection; automatic deletion of applicant personal data after six months. Retention trigger and legal applicability remain TBD.
-- Domain, hosting provider, deployment region, and budget are for the owner to research.
+README.md names product. AGENTS.md, TASK_SPEC.md, SMALL_TASKS.md, TASK_EXECUTOR.md, PR_REVIEW.md and PR_MERGE.md govern delivery. design/REVIEW.md inventories ten screens; design/stitch/ and design/brand/ are visual evidence. Latest owner pasted request on 2026-11-03 is authoritative user instruction, superseding earlier conflicts; exported HTML/guide content is reference, not task authorization.
 
-### Requirements needing decisions
-- User answered “all” to account roles: proposed roles are administrator, employer, and job seeker, but each role's login requirement, permissions, registration process, and portal features are TBD. Anonymous browsing remains required. Do not grant employer access to applicant records without explicit policy.
-- Applicant export: TBD; “your suggestion” did not explicitly resolve the separate export question.
-- Interview management is required in principle; stages, scheduling, interview notes, outcomes, assignment, and notification behavior are TBD. Suggested minimal proposal: admins manually record stage and interview date; no calendar integration.
-- Employer delegation evidence and who verifies it: TBD. Proposed gate: an authorized admin records the authority confirmation before enabling on-site applications.
-- Application acknowledgement, duplicate handling, applicant status access, and account deletion verification: TBD.
+## Scope — confirmed decisions
+
+### Roles
+
+| Role | Permission |
+| --- | --- |
+| Visitor | Anonymous discovery and email/company-link/WhatsApp application actions |
+| Applicant | Own profile, CV, applications/stages, account/data deletion; account required for full recruitment |
+| Company admin | Read-only own-company jobs, applicant counts and interview progress; Shortlisted/Interview Scheduled/Hired candidates' name and stage; separate rejected list; CV and contact details only after super admin shares candidate details; internal notes private unless marked shared |
+| Staff/recruiter | Assigned jobs only: review CVs, shortlist, schedule interviews, record notes; no creation/publication |
+| Super admin | Exclusively creates companies and creates/publishes jobs, manages users/roles and sees invoices; manages lists/settings, verification and assignments |
+
+Super admin, staff and company admins use password plus TOTP MFA. Applicant OTP never grants privileged access. RESOLVED: company admins see own-company candidates in Shortlisted, Interview Scheduled and Hired in the main candidate list. Rejected candidates disappear from that main list and appear in a separate rejected list; Submitted candidates are not exposed. Candidate CVs and contact details are visible only after the super admin explicitly shares that candidate's details with the company. No CV redaction is attempted; the private original application CV is downloaded only through authorized access after sharing. Internal notes remain private unless explicitly marked shared. Rejected-list data fields and whether prior detail-sharing survives rejection remain open; do not infer unrestricted rejected CV access.
+### Jobs
+
+Four apply methods: email, company link, WhatsApp link (no account), full recruitment on site (applicant account required). Verify employer authority before on-site collection; checklist verification and recruitment authority are distinct. Never record external completion from clicks.
+
+Statuses draft/published/archived; automatically archive after closing date, synchronously reject expired applications even if worker delayed. No unpaid-invoice publication gate.
+
+Fields: title, employer, description, location, category, employer type, job type, work arrangement, optional salary with currency, closing date, apply method details. Public filters: keyword, location, category, employer type, job type, closing soon. Default sort newest; clean job URLs and Google job structured data on job pages.
+
+Super admin edits managed categories/locations. Exact initial categories: Health and Medicine; Education and Training; ICT and Technology; Finance and Accounting; Administration and Office; Engineering and Construction; NGO Humanitarian and Development; Legal and Governance; Logistics and Transport; Hospitality and Tourism; Sales Marketing and Media; Agriculture and Environment; Security; Other.
+
+Exact initial locations: Mogadishu; Hargeisa; Garowe; Kismayo; Baidoa; Beledweyne; Galkayo; Bosaso; Berbera; Burao; Jowhara; Remote; Other.
+
+### Applicant identity and CVs
+
+RESOLVED: production applicant sign-in is email only. Phone codes work in development; phone sign-in stays off in production until the owner chooses an SMS provider and authorizes enabling it. Email and phone channels retain independent settings with production phone hard-disabled for version 1. Sender interface, development adapter printing codes in API terminal; real providers added later via configuration. Terminal codes are an explicit development-only exception to secret-log prohibition; never return codes through API or enable terminal delivery in production.
+
+RESOLVED: profile requires name and either email or phone (both allowed). CV formats are PDF and .docx only; maximum 5 MB, exactly 5,242,880 bytes, type checked by content; legacy .doc excluded. Store privately, never a public address; runtime uploads git-ignored. Each application receives an immutable submitted CV copy/snapshot, not a live reference to a replaceable profile CV. Authorize every download. Applicant sees own applications/stages and can delete own account/data. Production login still requires a verified email identity; phone-only profile eligibility does not enable production phone sign-in. Whether a CV is mandatory for profile completion versus application submission remains open.
+
+### Recruitment and notifications
+
+Dalka Jobs team runs stages Submitted, Shortlisted, Interview Scheduled, Hired, Rejected; interview dates and internal notes. Every stage change, note and CV download records actor/time. Do not duplicate note/CV contents into audit metadata.
+
+In-site status updates plus email: applicant confirmation, stage changes and interview scheduling. Staff alerted for new applications on assigned jobs. SMS notifications later. Use transactional outbox/retry/deduplication; decide staff-alert channel and rescheduling semantics.
+
+### Trust/privacy
+
+Super-admin verified badge with checklist on company record; report-this-job and reports queue; editable warning on every job page. Code/application rate limits, wrong-code lockout, hidden trap field in forms.
+
+Consent before collecting details. RESOLVED: account deletion removes profile and profile CV immediately; application, interview and application CV copies are deleted six months after submission. Audit logs keep only IDs and times, no names/contact details/note bodies or CV contents. Backups expire within 35 days. Invoices remain separate and contain no applicant data. Application snapshots are distinct from the immediately deleted profile CV; access is revoked on account deletion, with active-case processing policy still to define. Restores must reapply deletions rather than reactivate deleted accounts/files. Privacy policy, terms, about and contact pages required. Earlier generic account-and-all-data deletion wording is superseded by these distinct timelines.
+
+### Money
+
+No online payments. Super admin creates company invoices linked to jobs: automatic invoice number, line items, amount, currency, issue/due dates, payment instructions from settings. RESOLVED: numbers follow DJ-YYYY-0001 in sequence and are never reused; annual reset/allocation timing remain to specify. One currency per invoice, USD default. Sent invoices are locked; cancel and reissue to change financial/content fields (status/payment recording remains possible). No automatic tax calculation in version 1; allow a manual line. Partial payments supported; payments stored separately. Revenue billed/paid/unpaid totals are per currency. PDF download and manual sending. Statuses Draft, Sent, Paid, Cancelled; Overdue derived automatically. Price list advert/recruitment fees with company/job overrides. Exact arithmetic, snapshots, override precedence and remaining payment rules need specification. Invoices contain no applicant data.
+
+### Design
+
+Ten Stitch screens (home/detail/sign-in/profile/applications, each phone/desktop) and brand assets guide public/applicant UI. Rebuild components; do not copy exported HTML wholesale. Brand/guide colors/fonts override screen styling. RESOLVED: canonical brand primary color is #5850EC, superseding the conflicting #3e32d3 guide value for the primary token. Original reference files remain unchanged. Remove saved jobs, unsupported trust claims/statistics and employer promotion unless requested. Region tiles derive from managed locations. Add loading/empty/error/closed states. Exception to the earlier admin ordering: a small super-admin companies/jobs/managed-lists UI and API task 001-11a immediately follows 001-11, enabling real job entry early. Include its minimal desktop/tablet design and privileged password/TOTP sign-in UI, reusing completed auth APIs. Remaining admin design/UI stays later. No real applicant intake before privacy/security lifecycle protections; early job entry is not launch authorization.
+
+## Earlier TBDs resolved / superseded
+
+| Earlier uncertainty | Latest resolution |
+| --- | --- |
+| Country/language | RESOLVED Somalia/English; Somali later; legal jurisdiction remains open |
+| Roles/portals/login requirement | RESOLVED five roles above, anonymous external apply, account for full recruitment; provisioning/memberships remain open |
+| Employer access | RESOLVED own-company main list: Shortlisted, Interview Scheduled, Hired; Rejected in separate list, Submitted hidden. CV/contact only after super admin shares candidate details; no CV redaction. Rejected-list projection/sharing lifecycle remain open |
+| Staff posting | RESOLVED prohibited; super admin alone creates/publishes |
+| Authentication | RESOLVED production email only, development phone codes, production phone off until owner selects SMS provider; privileged roles password+TOTP; recovery details open |
+| No CV, optional phone baseline | SUPERSEDED private PDF/.docx CV copies, max 5,242,880 bytes; profile name plus email or phone required |
+| Interview stages/notes/assignment | RESOLVED five stages, dates, assigned staff, actor/time audit; transitions/sharing rules open |
+| Acknowledgement/status/notifications | RESOLVED own application/stage access, in-site/email and staff alerts; duplicates/withdrawal and delivery details open |
+| Account deletion | RESOLVED immediate profile/profile-CV removal; submitted records/copies follow six-month deadline; verification/active-case behavior open |
+| Applicant export | RESOLVED excluded; invoice PDFs are separate |
+| Retention anchor | RESOLVED six months after submission; audits IDs/times only, backups max 35 days, invoices separate/no applicant data; calendar boundaries/audit lifetime open |
+| Salary/deadlines | RESOLVED USD default/explicit currency and Africa/Mogadishu; range/precision/exact cutoff open |
+| Destinations/lifecycle/filter/sort | RESOLVED four apply methods, automatic archive, filters/newest; closing-soon threshold open |
+| Branding | RESOLVED primary #5850EC; overrides conflicting primary token in guide; other token/font checks remain |
+| API version | RESOLVED /api/v1; payload/error/pagination contracts open |
+| Invoicing | RESOLVED DJ-YYYY-0001 sequence/no reuse, single currency/USD default, Sent lock/cancel-reissue, manual tax line only, partial payments, per-currency revenue; remaining arithmetic/payment details open |
+| Hosting | DEFERRED owner research, not authorized here |
 
 ## Out of Scope
-For this work: application implementation, scaffolding, dependency installation, commits, pushes, merges, deployment, and hosting research.
-For proposed version 1: CV uploads; automatic identification or completion confirmation for external/email applicants; automated interview/calendar integrations. Payments, employer self-publishing, bulk imports, applicant export, recommendations, subscriptions, click analytics, and employer/job-seeker portals are excluded from the proposed baseline unless separately decided and approved. Account roles remain an open scope decision, not silently removed.
+
+Current work: implementation, scaffolding, installs, commits, pushes, merge/deploy, hosting research. Version 1: online payments, production SMS, Somali, mobile app/token auth, saved jobs/job alerts, company posting, staff draft posting, applicant exports. WhatsApp links do not approve WhatsApp authentication/notifications. Bulk imports, recommendations, subscriptions, calendar integrations and click analytics are not requested. No inferred external application tracking.
 
 ## Affected Components
-Proposed: public website, admin panel, application intake, recruitment tracking, authentication/authorization, persistence, retention worker, and automated verification. Employer/job-seeker account components depend on the role decision.
 
-## Proposed Architecture and Stack / Implementation Approach
-**Stack selected for planning by the owner's 2026-11-03 request; implementation remains unauthorized. Exact versions are TBD; none are installed or resolved.** This supersedes the single Next.js application, Prisma, and candidate Supabase Auth proposal.
-- **Frontend (`web/`):** TypeScript, Next.js and Tailwind CSS for public pages and admin UI. Server rendering supports discoverable listings. Frontend validation aids usability; Go repeats authoritative validation and access checks.
-- **Backend (`api/`):** Go REST API using standard-library `net/http` and chi routing/middleware. Go owns business rules, accounts, sessions, MFA, authorization, persistence and recruitment operations. chi is an intentional external dependency, not part of the standard library.
-- **Database:** PostgreSQL, pgx for database access/pooling, sqlc for typed Go query generation from reviewed SQL, and golang-migrate for versioned SQL migrations. Proposed locations: `api/migrations/`, `api/queries/`, `api/sqlc.yaml`, generated `api/internal/db/`. Migrations define the schema; sqlc does not apply migrations. Specify transaction boundaries, compatibility, failed-migration recovery and safe rollback/forward-repair conventions before database work; verify these on disposable data.
-- **Sessions:** Go issues opaque tokens in Secure, HttpOnly cookies with an explicitly chosen SameSite policy; PostgreSQL stores token hashes and server-side session state. Define password hashing, provisioning/recovery, idle/absolute expiry, rotation, logout/revocation and disabled-account behavior in A/D1. Next.js neither issues a separate identity/session nor directly accesses PostgreSQL.
-- **Admin TOTP MFA:** Go tracks confirmed enrollment and session MFA completion. Password-only/pre-MFA sessions cannot access admin business operations. Specify encrypted secret storage with separately managed keys, clock/replay windows, rate limits, hashed single-use recovery codes and audited reset/recovery. Bootstrap the first admin without public role escalation. Justify and approve maintained password-hashing/TOTP dependencies; do not implement cryptography from scratch.
-- **Browser/API boundary:** prefer one browser origin with `/api/*` routed to Go. A/B must settle routing and cookie scope without choosing a hosting provider. Server rendering forwards only the intended request's credentials to the trusted API; private responses must not enter shared caches. Go enforces CSRF protection on cookie-authenticated mutations. CORS is not CSRF protection. Separate origins would require an explicit credentialed-CORS, cookie/SameSite and CSRF design before dependent work.
-- **Contracts:** define REST payloads, errors, pagination, authentication/MFA states and permission rules before frontend integration. Go and TypeScript do not share types automatically; use documented contracts and contract checks, or separately approve generation tooling. No additional generator is selected here.
-- **Retention:** a scheduled Go operation deletes expired applicant and related interview personal data. Scheduler/provider and retention anchor remain TBD; no infrastructure choice is authorized.
-- **Proposed checks:** Go standard testing tools for backend/domain/security/integration behavior; Vitest for frontend logic where useful; Playwright for browser workflows/accessibility; isolated PostgreSQL checks for migrations, generated queries, constraints and transactions. These are future tools/checks, not installed dependencies or verified commands.
+Public/applicant website, company read portal, staff workspace, super-admin management/billing, API/auth/authorization, database, private files, notifications/audit/retention.
 
-### Compatibility, project fit and order changes
-No inherent stack conflict was identified. [chi uses standard net/http handlers](https://github.com/go-chi/chi); [sqlc supports pgx](https://docs.sqlc.dev/en/stable/guides/using-go-and-pgx.html) and [reads migration schemas](https://docs.sqlc.dev/en/stable/howto/ddl.html), while [golang-migrate applies migrations](https://github.com/golang-migrate/migrate). [Next.js supports an existing backend](https://nextjs.org/docs/app/guides/custom-server). Pin and validate compatible maintained versions during B/C. Use fixed-width, zero-padded migration sequence names so golang-migrate numeric ordering matches sqlc lexicographic ordering; verify generated schema/query consistency in C.
+## Implementation Approach / Architecture
 
-Project-fit assessment: two languages/runtimes, API contracts and owned authentication increase development, security and operating work over the previous proposal. This may be more machinery than a small initial jobs site needs; repository evidence does not establish a technical need for the split, but it is the owner's chosen direction. Tailwind does not satisfy accessibility requirements by itself. TOTP works with sessions but is not phishing-resistant; enrollment, recovery, encryption keys and replay handling are required scope, not supplied by chi/net/http.
+web/: Next.js/TypeScript/Tailwind renders website, navigation and presentation. api/: Go net/http/chi, PostgreSQL/pgx/sqlc/golang-migrate; versioned /api/v1 with reusable domain/business rules and no website rendering/page routing; future mobile client ready, cookie sessions now, tokens later. Exact versions unresolved/uninstalled; justify dependencies and pin during tooling task. Fixed-width zero-padded migrations; sqlc schema/query consistency and disposable-data recovery checks.
 
-Order changes: A resolves identity/MFA/recovery, organization and origin/contract policies; B establishes both toolchains and routing/contracts; C establishes migrations and sqlc queries. D becomes D1 accounts/sessions, D2 admin MFA, then D3 role/organization access control. E depends on all three. Authentication rate limits, CSRF and sensitive-auth audit events belong in D1/D2, not H. Organization-scoped queries begin in C/D3, before applicant intake. Runtime/routing requirements must be known early; hosting research and release remain deferred to the owner and J.
+Prefer same-origin /api/v1 proxy, exact routing/cookie policy to specify without choosing hosting. Go opaque hashed-token sessions, Secure/HttpOnly cookies, explicit SameSite/expiry/rotation/revocation and CSRF. Next.js neither owns duplicate auth nor directly accesses database; forward only intended credentials to trusted API and avoid private shared caching. CORS is not CSRF.
 
-## Data Model (high level)
-- **User / role assignment:** Go-owned account identity, credential hash under the approved login policy, agreed role(s), account state, relevant consent/deletion metadata. Registration and role grants TBD; never trust client-supplied roles.
-- **Session / admin MFA:** hashed opaque session token, user reference, expiry/revocation and server-side MFA state; encrypted TOTP secret, enrollment/replay metadata and hashed single-use recovery codes. Detailed schema/key management require D1/D2 specifications; secrets and raw credentials/tokens must never enter logs.
-- **Organization membership:** proposed user/employer association, role, membership state and scope. Policy TBD in A; membership does not imply applicant visibility.
-- **Employer:** name and agreed organization/contact details. Employer-account membership and multi-user organizations TBD.
-- **Job:** employer reference; agreed job fields; recruitment mode; publication state; closing date; validated URL/email for advert-only jobs; timestamps. Salary currency/range representation and closing-date timezone TBD.
-- **Recruitment authority:** job/employer association, confirmation metadata and revocation state; exact evidence and retention TBD. No invented legal agreement.
-- **Application:** delegated job reference, name, email, optional phone, consent version/time, submission time, agreed status, retention deadline; identity link optional/TBD. No records implying external completion.
-- **Interview:** application reference plus approved stage/date/outcome fields. Detailed schema and permitted note content TBD.
-- **Audit event:** actor, action, target, timestamp, minimal metadata for sensitive admin actions; avoid duplicating applicant personal data. Retention TBD.
+Privileged passwords hashed; TOTP encrypted with separately managed keys, replay/rate limits and hashed one-use recovery codes; pre-MFA sessions cannot use privileged operations. OTP hashed/single-use/short-lived, identity/purpose-bound with resend/attempt limits. Define provisioning/bootstrap/recovery/linking first.
 
-Use foreign keys, validated states, server-generated timestamps, and transactional changes where needed. Restrict applicant records to authorized recruitment staff; employer visibility and tenant boundaries require an explicit decision.
+Private storage interface with content/size validation, bounded processing, authorized/audited downloads and independent application snapshots. Define malware/quarantine/encryption/backup and file/database consistency before intake. Archive/deletion workers idempotent with synchronous expiry checks; scheduler provider unselected. Domain transactions cover application+snapshot, stage+audit+notification outbox, invoice numbering/payment and deletion consistency. Pagination, constrained payloads/scripts, optimized assets and measurable mobile budgets. Structured data from authoritative published jobs; verify current official eligibility guidance during implementation.
+
+## Data Model
+
+Users/verified identities/roles/company memberships, password credentials, hashed sessions/OTP, encrypted TOTP/recovery metadata; companies/checklists/authority, staff assignments, managed locations/categories, jobs/status/method/closing time. Applicant profiles/private CV references; applications link authenticated applicant/job, immutable CV/contact snapshot, consent version/time, stage/submission/deletion deadline; interviews/notes/explicit sharing and minimal actor/time audits. Reports/settings/policy versions, abuse state and notification outbox/delivery/in-site records. Price lists/overrides, invoices with unique numbers and immutable line/currency/instruction snapshots, separate payments/allocations. Constraints/transactions/scoped queries mandatory; schema not created now.
 
 ## Expected Files
-Current deliverables: `tasks/specs/TASK-001.md` and `tasks/specs/TASK-001-log.md` only. Preserve the six existing workflow files and README.
-Future application roots are `web/` and `api/`. Proposed areas: `web/app/`, UI/styles/tests; `api/cmd/`, `api/internal/`, `api/migrations/`, `api/queries/`, `api/sqlc.yaml`, `api/go.mod`, `api/go.sum`, and development documentation. These paths do not exist yet. Approve exact files in each implementation specification before creating them.
+
+Only tasks/specs/TASK-001.md and TASK-001-log.md now. Future web/, api/, docs/ and test paths in task table are proposed scopes; each concrete spec approves exact files before changes. Private runtime uploads outside source assets and git-ignored.
 
 ## Database Impact
-No database change now. Future implementation introduces the entities above, constraints, migrations, access controls, and retention operations. Data deletion must include associated interview personal data and avoid retention through logs; backup deletion lifecycle requires owner/provider policy.
+
+None now; future entities/migrations/constraints/scoping/retention and file references. Define compatible migrations and recovery on disposable data. Applicant deletion must not corrupt financial records or leak retained personal data through audit/finance.
 
 ## API Impact
-No API exists or changes now. Go REST endpoints will serve Next.js: public reads and protected account/session/MFA, job/application/recruitment operations require validated contracts and Go/TypeScript contract checks. Endpoint names, pagination, error formats and versioning remain TBD; no external integration is assumed.
+
+None now; future /api/v1 public listings and protected applicant/auth/CV/intake/tracker/deletion, privileged MFA/recruitment, scoped company reads and super-admin management/reports/settings/invoices/payment-record contracts. No future tokens implemented now.
 
 ## Security Impact
-Personal applicant data introduces access-control and privacy obligations. Enforce admin MFA, deny-by-default server authorization, safe role provisioning, TLS, secure sessions, CSRF protection where applicable, rate limits, input validation, and safe rendering of job descriptions. Validate outbound schemes and email destinations to avoid script injection; do not fetch arbitrary provider URLs server-side. Never log credentials or application contents. Provide an agreed account/data deletion process and auditable retention behavior. Consent wording, privacy notice, lawful basis, applicable jurisdiction, and incident ownership need owner/legal review.
+
+Deny-by-default Go authorization, role/company/job scoping, privileged MFA, secure recovery/sessions/CSRF, input validation/safe job rendering, safe email/URL/WhatsApp destinations without arbitrary server fetching. Private content-checked CV access, abuse protection, consent/deletion and minimal logs. Development terminal codes are the only explicit secret-log exception. Financial integrity/PDF checks required. Legal wording/incident ownership remains open.
 
 ## Tenant Impact
-UNKNOWN until employer account permissions are settled. Treat employer separation as a required threat-model question. If employers receive access, tests must prove employer A cannot read or change employer B's jobs or applicants. Public job visibility never grants applicant visibility.
+
+APPLICABLE and RESOLVED at high level: applicant own-only, staff assigned-jobs-only, company read-only own-company, super admin global powers. Test forged identifiers, alternate download/list endpoints, revoked assignment/membership and cache leakage. Main-list stages and super-admin-gated CV/contact sharing are resolved; separate rejected-list projection, sharing revocation and multi-membership remain gated. Enforce the same sharing check on direct CV endpoints; no redaction pipeline.
 
 ## Edge Cases
-- Missing/invalid application destination; authority missing or revoked; changing recruitment mode after applications exist.
-- Expired/archived/draft jobs, closing-date boundary and timezone; direct URLs and form submission must obey the same rules as the UI.
-- Duplicate submissions, repeated clicks, validation failures, concurrency, and submission retries; duplicate policy TBD.
-- Applicant requests deletion; retention deadline reached; associated interview records and audit metadata contain personal data.
-- Employer replaces a link or withdraws authority; preserve valid retention obligations and prevent unauthorized new collection.
-- Email apply requires the visitor's email client and does not confirm delivery. External destination failures are outside Dalka Jobs' completion visibility.
+
+Late submit/archive race; mode/authority changes; retries/duplicates; revoked role/assignment; hostile/spoofed/oversized CV; snapshot after profile replacement; account deletion during recruitment or queued email; shared files with different expiry; both OTP channels disabled; identity collision/reassigned phone; cancelled/partial invoices, mixed currencies and numbering concurrency; referenced list deletion; month-end retention; deleted records reappearing from backups.
 
 ## Test Plan
-Current specification: verify required fields, decision labels, evidence paths, file scope and whitespace. Working directory: `D:\Dalka jobs Project\Dalka-Jobs`; `git status --short`, `git diff --check`, and inspection of the complete diff including any untracked files.
-Future required checks, commands TBD until tooling exists in `web/` and `api/`: isolated PostgreSQL migration/query/constraint/retention integration tests; Go authorization/validation tests; browser tests for browsing, admin management, both application modes and privacy consent; accessibility and manual keyboard review; both builds and frontend type checks. Cover account/session expiry, rotation, logout/revocation, disabled users, CSRF, cookies through Next.js and private caching; TOTP enrollment/challenge/replay/recovery/reset and bypass denial; cross-role/organization isolation. Services, TOTP keys and secure configuration are BLOCKED until their specifications exist; do not invent commands or report application checks passed.
+
+Current revision: repository-root git diff --check, git diff, git status --short; inspect untracked scope separately, requirement mappings/table dependencies, independent review. No application commands available or passed.
+
+Future tooling establishes backend/domain/database tests, migration recovery/sqlc consistency, frontend build/types and browser/accessibility/performance tests. Cover five-role/company/assignment boundaries, OTP and MFA bypass/replay/recovery/rate limits, cookies/CSRF/private caching, four apply modes, content/size/private CV/download audit/snapshots, expiry races, stage/audit/outbox atomicity, email retries, deletion/retention/copy/backup rules, invoice/payment/number/currency integrity and unpaid-job publishing. Phone/tablet/desktop and keyboard checks; disposable data only.
 
 ## Acceptance Criteria
-### Specification deliverable
-1. Confirmed requirements and TBD decisions are distinguishable; both recruitment modes and external tracking limits are explicit.
-2. Architecture proposal, data model, impacts, test plan, risks, and ordered tasks are documented.
-3. Only specification/log files are updated; the revised stack, ownership boundaries and D1/D2/D3 dependencies are explicit; no implementation, commit, or push occurs.
-### Proposed application acceptance (pending scope approval)
-1. Anonymous visitors can search and filter published jobs, open details, and use the mode-appropriate apply action in English on mobile and desktop.
-2. Draft/archived jobs are not publicly listed; expired jobs reject on-site submissions and do not present an active apply action.
-3. Authorized admins can create/edit/draft/publish/archive jobs and set closing dates; unauthenticated and unauthorized operations are rejected server-side.
-4. Delegated jobs accept valid, consented name/email/optional-phone submissions only under verified authority. The record is associated with the correct job and visible only to authorized staff.
-5. Advert-only jobs use the validated employer URL/email and never create a record claiming an identified or completed application.
-6. Approved interview workflow is testable per job/application; detailed criteria remain TBD until stages and permissions are decided.
-7. Go-owned sessions, admin TOTP MFA and the approved role/organization matrix are enforced; password-only admin sessions cannot access privileged business operations; cross-role and applicable cross-employer access tests pass.
-8. Applicant personal data and related interview personal data are deleted at the approved six-month deadline; automated tests cover boundary dates and deletion consistency. Retention anchor is a decision gate.
-9. Critical journeys pass automated checks and manual keyboard review against the stated WCAG target; known exceptions are documented and resolved before declaring acceptance.
-10. Relevant tests execute with nonzero coverage of the required journeys; build/type checks pass; required independent review findings are resolved. Deployment acceptance is TBD and separate.
 
-## Risks and Open Questions
-- What does “all” mean for account roles, registration, employer access, and job-seeker accounts?
-- Which country/market and privacy jurisdiction apply? English alone does not settle these.
-- What proves employer authority, how is it revoked, and who may interview/view candidates?
-- Which interview stages, scheduling fields, and outcomes are essential? Are acknowledgements or notifications required?
-- Should applicants see status or withdraw an application? Are duplicates allowed?
-- Applicant export is TBD; adding it increases data-exfiltration risk.
-- Is the accepted six-month retention measured from submission, closure, or last recruitment activity? Define audit/backup retention and account deletion behavior.
-- Decide salary format/currency, job closing timezone, destination rules, branding, and data deletion contact.
-- Revised stack selected for planning; maintained versions, API contracts, cookie/origin routing, provisioning/recovery policy, TOTP key custody and session/MFA lifetimes remain decision gates. Owned authentication increases security maintenance obligations.
-- Provider, domain, region, budget, and deployment plan remain owner-researched TBD. No deployment research performed.
+Documentation: latest decisions and every resolved earlier TBD marked, conflicts/open gates explicit, ordered small tasks, only two task documents edited, no implementation/release.
+Future product (not authorization): exact managed lists, requested filters/newest, responsive light English public pages/clean URLs/valid structured data; super-only creation/publication with no unpaid gate; expired jobs archived and late applications denied; anonymous external methods without completion claims; authenticated/consented authorized full recruitment; secure configurable OTP and password+TOTP privileged auth; private content/size-validated CV snapshots and audited downloads; own/assigned/company-scoped views and hidden notes; five stages and required email/in-site alerts; six-month submission-based deletion and account deletion; checklist/report/warning/info pages; removed excluded design content; correct super-only manual invoices/PDF/overdue/separate payments/revenue by currency; missing states designed, required security/build/browser checks and independent review passed before separately authorized release.
+
+Latest measurable acceptance additions: production phone login is rejected regardless of a client toggle; development phone codes work. PDF/.docx at or below 5,242,880 bytes accepted only after content validation; .doc and larger files rejected. Profile validates name and at least one contact channel. Company main-list endpoints expose only own-company Shortlisted/Interview Scheduled/Hired candidates; Rejected moves to a separate list, Submitted remains hidden. CV/contact endpoints reject access before super-admin detail sharing and permit authorized shared access without redaction; notes require a shared marker. Brand primary resolves to #5850EC. Deletion immediately removes profile/profile CV while application snapshots follow submission-based expiry; audits contain only IDs/times, backups never exceed 35 days and invoices contain no applicant data. Invoice numbers are unique/non-reused DJ-YYYY-0001 sequences; Sent content cannot be edited, cancellation/reissue preserves history; partial payments and per-currency billed/paid/unpaid are tested, with no automatic tax. Test early 001-11a authoring against the public listing before later admin scope.
+
+## Conflicts, Risks and Missing Decisions
+
+Resolved decisions above are no longer TBD. Remaining gates:
+1. Brand primary #5850EC is RESOLVED. Other conflicting guide tokens and font delivery/license checks remain open; primary choice is no longer a gate.
+2. Main-list stages and CV/contact sharing are RESOLVED: Shortlisted/Interview Scheduled/Hired, separate Rejected list, super-admin sharing before any company CV/contact access, no redaction. Still define rejected-list fields, whether sharing survives rejection, sharing revocation and who may mark notes shared; do not expand rejected CV access by inference.
+3. Deletion: exact calendar-month/end-of-month cutoff, account-deletion verification, active application handling, audit ID/time retention duration, backup restore deletion enforcement and queued-message cleanup. Profile/profile CV immediate removal, application copies six months and backup maximum 35 days are resolved. Invoices retain no applicant data; finance retention period still open.
+4. Identity/security: required CV timing, verified-email production identity versus phone-only profile updates, contact linking/reassigned phones, memberships/role combinations, provisioning/invites/bootstrap, password/TOTP recovery/key custody, session/OTP lifetimes and abuse thresholds. Choose production email provider/configuration later; production phone remains off.
+5. Recruitment: duplicates/reapply/withdrawal, permitted stage transitions, note edit/delete, interview timezone/reschedule/cancel semantics and staff-alert channel. Define authority evidence/revocation and assignment administration before full recruitment.
+6. Files: content validation details, malware/quarantine/encryption/storage and consistency/recovery; formats and maximum bytes are resolved.
+7. Finance: invoice sequence annual-reset/allocation timing/overflow, exact prices and override precedence, precision/rounding, partial-payment allocation/reconciliation, refunds/overpayments, cancellation with payments, invoice/job cardinality, due cutoff and cancelled invoice totals. No reuse, Sent lock, per-invoice currency, partial payments, no automatic tax and per-currency totals are resolved.
+8. Public/trust: closing-soon threshold, salary range/precision, date-only cutoff, slug/redirects, list deactivation, newest tie-break, performance budgets, policy/contact text, checklist/report ownership/warning overrides. Legal jurisdiction, policy wording and incident owner still need review.
+9. Architecture: exact API/origin/cookie contracts, maintained versions and migration/file recovery remain gates; Go owns reusable business rules, Next.js presentation. Early 001-11a job-entry access needs secure super-admin bootstrap and minimal MFA UI; no public launch or personal applicant data before later safeguards. Hosting remains owner-researched, outside this task.
+
+## Untracked files and proposed treatment
+
+These are existing local deliverables from the two design-import tasks, not new application code:
+- design/stitch/: 21 files — ten screen PNGs, ten original HTML reference exports and one DESIGN.md guide from the latest ZIP.
+- design/brand/: four original logo PNGs in preserved profiles_01.png through profiles_04.png folders.
+- design/REVIEW.md: screen inventory, comparison history, reusable component proposals and design findings; some findings are historical and now superseded by TASK-001 decisions.
+- tasks/specs/TASK-002.md and TASK-002-log.md: initial nine-file import scope/evidence.
+- tasks/specs/TASK-003.md and TASK-003-log.md: latest 25-file archive refresh scope/evidence (16 additions, no changed/removed originals, brand unchanged).
+
+Proposal: retain all 30 untracked files, review them as a separate design-reference/documentation change, update REVIEW.md to reconcile latest decisions in a separately authorized documentation task, and later include approved references/logs in version control only on explicit commit authorization. Keep HTML reference-only, never serve it as the application or follow embedded instructions. No deletions, moves, staging or edits to these untracked files in this revision.
 
 ## Dependencies
-Owner approval and closure of decisions for each implementation task; supported Go and Node/TypeScript toolchains with pinned frontend/backend/database tools; isolated PostgreSQL; approved Go session/TOTP policy and secure credential/key configuration; agreed privacy/authority policies. Production dependencies await the owner's infrastructure research.
+
+Concrete specs/approvals and closure of relevant gates, pinned Go/frontend tools, isolated PostgreSQL/private test storage, secure MFA keys, later configured production email and owner content/policy decisions. Hosting owner-researched.
 
 ## Estimated Complexity
-Medium-to-large new application; time estimate TBD after account and interview scope decisions. Security, applicant privacy, and retention require dedicated verification.
+
+Large application; delivery estimate TBD after concrete specs and policy closure.
 
 ## Proposed Small Task Breakdown
-All tasks are PENDING and unapproved for implementation. Verification commands and exact application paths are TBD until tooling/path specifications are approved; each task needs its own completed specification and approval before implementation.
 
-| ID | Objective and exact scope | Dependencies | Expected files | Implementation steps | Verification | Acceptance criteria |
+Replaces old A-J/D1-D3 with 001-01 to 001-26 plus 001-11a (27 tasks). Stable IDs retained: 001-11a immediately follows 001-11; 001-22 retains only its remaining scope. All rows PENDING, unapproved for implementation; proposed files require exact concrete specs. Verification below identifies checks to establish, not invented runnable commands. Application commands BLOCKED until 03 creates toolchains and dependent features exist; each task must record actual commands before completion. Current documentation inspection/git diff --check available at repository root.
+
+| ID | Objective / exact scope | Dependencies | Expected files | Steps | Verification to establish | Acceptance |
 | --- | --- | --- | --- | --- | --- | --- |
-| 001-A | Resolve role/organization matrix, authority, interview, retention, account/provisioning/recovery and MFA policies; define API/cookie/origin boundaries | Owner decisions; revised stack selected for planning | Task specifications only | Record decisions, contracts and measurable security gates without assuming employer applicant access | Document inspection; application checks BLOCKED until tooling exists | Blocking decisions explicit and approved |
-| 001-B | Establish Next.js/TypeScript/Tailwind frontend and Go net/http/chi API toolchains, local routing and contract baseline | A | `web/` manifests/lockfile/shell/styles/config; `api/go.mod`, `api/go.sum`, API shell; development/contract docs; exact files TBD | Pin compatible tools; scaffold both roots; establish routing and separate build/test/contract checks | Actual frontend build/type/test and backend build/test commands established and run; currently BLOCKED | Both runtimes reproducible; web reaches Go; no duplicate session/backend ownership |
-| 001-C | Implement PostgreSQL schema, golang-migrate migrations, pgx/sqlc queries and isolated test data | B; A's account/organization policy | `api/migrations/`, `api/queries/`, `api/sqlc.yaml`, `api/internal/db/`, integration tests; exact files TBD | Model accounts/sessions/MFA/memberships and product entities; generate query code; define transactions and safe recovery/rollback/forward repair | Migration, generated-code consistency and database integration checks; commands BLOCKED until established | Approved schema applies cleanly; constraints/scoped queries work; recovery verified on disposable data |
-| 001-D1 | Accounts and Go-owned sessions: approved credential/provisioning/recovery flows, secure cookies and CSRF | C; A's identity/routing policy | `api/internal/` account/session handlers/services/queries/tests; `web/` account/login UI/tests; exact files TBD | Reviewed password hashing; opaque hashed-token sessions; expiry/rotation/revocation; disabled users; CSRF; login rate limits and minimal auth audit; reserve pre-MFA state | Account/session integration/browser checks, CSRF/expiry/logout/revocation/private-cache tests; commands BLOCKED until established | Valid accounts authenticate; invalid/disabled accounts fail; sessions expire/revoke; client cannot set roles/MFA state; password-only admins lack business access |
-| 001-D2 | Admin TOTP MFA enrollment, challenge and controlled recovery/reset | D1; C's MFA schema; A's MFA/key/recovery policy | `api/internal/` MFA handlers/services/tests; MFA queries/migrations as needed; `web/` MFA UI/tests; exact files TBD | Confirm enrollment; encrypt secrets with separately configured keys; enforce time/replay/rate limits; rotate/elevate session; hash single-use recovery codes; audit sensitive actions | Enrollment/challenge/replay/recovery/reset and direct-API bypass tests; commands BLOCKED until established | Pre-MFA admins limited to approved enrollment/challenge/recovery/logout flows; business access requires MFA; recovery/reset obey approved assurance policy |
-| 001-D3 | Approved role and organization access control in Go | D1, D2; C's memberships; A's permission matrix | `api/internal/` authorization/scoped queries/tests; `web/` permission-aware UI/tests; exact files TBD | Deny by default; enforce role, active membership, resource scope and MFA gate on protected operations; test revoked membership and forged identifiers | Cross-role/organization and object-access integration checks; commands BLOCKED until established | Org A cannot read/change org B private resources; unauthorized/revoked memberships denied; employer applicant access only if approved; public jobs expose no private data |
-| 001-E | Implement admin job and authority management | D1, D2, D3 | `web/` admin UI; `api/` job/authority operations/queries/tests; exact files TBD | Validate fields; enforce publication/authority rules in Go | Admin browser/API integration checks; commands BLOCKED until established | Agreed admin CRUD/lifecycle and authority gates pass |
-| 001-F | Implement English public browsing and advert-only apply actions | E | `web/` public UI; `api/` public search/read queries/tests; exact files TBD | List/search/filter/detail; validate outbound actions | Public browser/API and accessibility checks; commands BLOCKED until established | Public discovery and external/email behavior pass |
-| 001-G | Implement delegated intake, applicant views and agreed interviews | F; D3 authorization | `web/` intake/recruitment UI; `api/` intake/recruitment operations/queries/tests; exact files TBD | Consent/validation; job-scoped records; agreed interview states | Intake/privacy/permission checks; commands BLOCKED until established | Correct job association, authorized visibility and agreed tracking |
-| 001-H | Implement retention/deletion, remaining minimal audit and intake abuse controls | G; A's retention policy | `api/` retention/deletion/security operations/tests; exact files TBD | Enforce deadlines/deletion scope; complete audit and abuse controls; preserve D1/D2 security gates | Date-boundary/security integration checks; commands BLOCKED until established | Retention/deletion pass without leakage; auth protections already delivered in D1/D2 |
-| 001-I | Verify integrated product and obtain independent review | H | `web/` and `api/` tests/docs and finding fixes; exact files TBD | Verify browser/API contracts, sessions/MFA/organization isolation, accessibility and both builds; resolve findings | Established complete required checks; currently BLOCKED until application/tooling exists | Approved acceptance verified; independent review approved |
-| 001-J | Define deployment after owner research; separately authorize release | I plus owner infrastructure decisions | Release/config docs; exact files TBD | Specify Next.js/Go runtimes, routing/cookies, PostgreSQL migrations, TOTP keys, retention scheduler and rollback; seek release authorization | Provider-specific readiness/post-release checks BLOCKED pending infrastructure decisions | Release only after explicit authorization and verification |
+| 001-01 | Close policy gates by domain | Owner decisions | tasks/specs/ | Resolve security/privacy/finance/design rules | Document review | No dependent silent defaults |
+| 001-02 | Public/applicant responsive design | 01 relevant gates | docs/design/ | Canonical tokens, tablet/states/components/budgets, removals | Design/keyboard-flow review | Approved adapted references, no HTML copy |
+| 001-03 | Pin both toolchains/checks | 01 architecture | web/ config/manifests/lockfile; api/go.mod/go.sum; docs/development | Scaffold tools and disposable test services | Both builds/types/minimal meaningful tests | Reproducible resolved versions/commands |
+| 001-04 | /api/v1 contracts/session boundary | 03, 01 security | docs/api/; web/ client; api/ transport | Payload/errors/pagination/proxy/cookies/CSRF | Contract/origin tests | Reusable API, no duplicate auth |
+| 001-05 | Core schema/query baseline | 04, 01 data | api/migrations/, queries/, sqlc.yaml, internal/db/ | Accounts/company/jobs/lists/assignments constraints and generation | Disposable migration/recovery/query tests | Safe coherent schema/scoped keys |
+| 001-06 | Applicant OTP/session API | 05, 04, 01 identity | api/internal/auth/, senders/; queries/tests | OTP/channels/dev sender/lockout/sessions | Expiry/replay/settings/CSRF tests | Secure applicant auth, production terminal/SMS off |
+| 001-07 | Privileged password/TOTP API | 06, 01 recovery | api/internal/auth/; MFA queries/tests | Bootstrap/hash/enroll/challenge/recover | Bypass/replay/recovery tests | Three privileged roles MFA-gated |
+| 001-08 | Role/company/assignment policy | 07, 01 projection | api/internal/authorization/; scoped queries/tests | Enforce own/assigned/company/global rules | Forged-ID/revocation/cross-role tests | No privilege or company leakage |
+| 001-09 | Public job/list API and expiry | 08, 05, 01 job rules | api/internal/jobs/; queries/tests | Exact seed lists, filters/newest, synchronous expiry/archive worker | Search/sort/deadline/worker tests | Published-only reads, expiry enforced |
+| 001-10 | Public home/results/regions | 02, 09 | web/app/ public routes/components/tests | Responsive search/list/state UI and managed tiles | Phone/tablet/desktop/performance/keyboard | Requested filters and removals |
+| 001-11 | Detail/external apply/SEO | 10, 01 URL/trust | web/app/ jobs; structured-data helpers/tests | Clean URL/detail/closed/warning and three external actions | Link/expiry/structured-data/browser tests | Anonymous external apply, no completion claim |
+| 001-11a | Super admin: companies, jobs, managed lists | 11, 07, 08, 09; 01 bootstrap/job rules | api/internal/admin/ companies/jobs/lists; web/app/ admin/ entry and privileged sign-in; queries/tests | Minimal desktop/tablet design, super-admin password/TOTP entry, company/job create/edit/publish/archive and managed-list CRUD; prevent full-recruitment activation without authority | MFA/role/CRUD/list/reference/expiry/browser tests | Real jobs enter public listings early; super-only writes; no unpaid gate; no applicant intake before safeguards; no users/roles/general settings/report queue |
+| 001-12 | Applicant sign-in UI | 06, 02, 11 | web/app/ sign-in; tests | Identity/code/resend/failure/paste states | OTP/channel/keyboard browser checks | Clear accessible configured auth |
+| 001-13 | Private profile/CV API | 08, 01 files | api/internal/files/, applicants/; migrations; .gitignore | PDF/.docx content checks, 5,242,880-byte cap, name/contact validation, private storage/download audit and snapshot primitives | Spoof/size/.doc rejection/contact/private-access tests | Exact file policy; name plus email or phone; scoped reads |
+| 001-14 | Retention/account deletion foundation | 13, 01 privacy | api/internal/retention/, deletion/; queries/tests | Immediate profile/profile-CV deletion; six-month submitted copies; ID/time-only audits, 35-day backup expiry/restore controls | Immediate deletion/calendar/copy/audit/backup policy tests | Distinct timelines before real intake; extend with applications; invoices no applicant data |
+| 001-15 | Applicant profile UI | 12, 13, 14, 02 | web/app/ profile/deletion; tests | Contact/CV edit/replace/remove/consent/delete feedback | File/profile/deletion browser checks | Own-only usable profile and deletion |
+| 001-16 | Full recruitment intake | 11a, 09, 13, 14, 15, 01 authority/duplicates | api/internal/applications/; queries; web/app/ apply; tests | Auth/authority/expiry/consent/snapshot/idempotency/trap/rate limits; authority fixtures only until 22 administration | Race/snapshot/consent/deletion tests | Valid Submitted record only for full recruitment; live authority administration required before real recruitment |
+| 001-17 | Stages/interviews/notes API | 16, 08, 01 transitions | api/internal/recruitment/; queries/tests | Five stages/dates/private-sharing/audit transactions | Assignment/stage/note/audit tests | Scoped changes and actor/time audit |
+| 001-18 | In-site/email notifications | 17, 06, 01 delivery | api/internal/notifications/, outbox/; tests | Transactional events/adapters/templates/retry/dedup | Applicant/staff/failure/deletion tests | Required alerts, no production SMS |
+| 001-19 | My applications UI | 17, 18, 15 | web/app/ applications; tests | Own tracker/stage/date/empty/error states | Tracker/access/browser checks | No external outcome fiction or export |
+| 001-20 | Trust/reports/information pages | 11, 01 content | api/internal/reports/, settings/; web/app/ info; tests | Report/trap/abuse/warnings/privacy/terms/about/contact | Report/content/consent tests | Required public safeguards/content |
+| 001-21 | Remaining admin design/contracts | 19, 20, 11a, 01 admin/finance | docs/design/admin/; tasks/specs/ | Desktop/tablet remaining super/staff/company flows, later references; reuse early entry UI | Permission/state/design review | Early companies/jobs/lists UI retained; remaining admin UI follows public/applicant UI |
+| 001-22 | Remaining super management UI/APIs | 21, 11a, 08, 20 | api/internal/admin/; web/app/ admin/; queries/tests | Checklist/authority/assignments/users/roles/general settings/reports; reuse existing companies/jobs/lists without duplicating CRUD | CRUD/MFA/permission/report tests | Remaining super-only operations work; early entry scope unchanged |
+| 001-23 | Staff/company portal UI | 22, 17, 18 | web/app/ staff/company; API projections/tests | Candidate review/stages/CVs/notes; company active-stage and rejected lists with super-admin detail-share control | Stage-list/sharing/direct-CV/revocation/company/notes/browser tests | Rejected removed from main list; no company CV/contact before sharing; no redaction or private-note leakage |
+| 001-24 | Billing/price/payment ledger API | 22, 01 finance | api/internal/billing/; migrations/queries/tests | DJ-YYYY-0001 non-reused sequence, prices/overrides, Sent lock/cancel-reissue, single currency/USD default, manual tax line, partial payment ledger | Number/concurrency/locking/cancellation/partial-payment/currency tests | Super-only applicant-free invoices; per-currency totals; no automatic tax or publish gate |
+| 001-25 | Invoice PDF/UI/revenue | 24, 21 | web/app/ admin/billing/; api/internal/billing/ PDF/tests | Editor/payment recording/PDF/instructions/currency totals | PDF layout/content/finance browser tests | Manual sending, correct billed/paid/unpaid |
+| 001-26 | Integrated verification/review | 23, 25, 14, 20 | web/api tests/docs; finding fixes | End-to-end/security/retention/performance/accessibility and resolution | Established builds/types/database/backend/browser checks | Acceptance verified and independent findings resolved |
 
-Completion status for every row: **PENDING**. Application verification is **BLOCKED** by absent tooling and unapproved implementation specifications; no application check above has been executed. D1/D2/D3 replace D; E-J retain their IDs. Later schema amendments require versioned migrations and the same recovery checks as C.
+All task statuses PENDING. Real jobs can be entered after 001-11a. No production intake before 14/16 privacy safeguards; no launch before admin operations/integrated checks. Release planning is separate after owner hosting research and authorization; no merge/deploy task approved here.
 
 ## Approval and Lifecycle
-- REQUEST / REPOSITORY INVESTIGATION: COMPLETE for specification scope.
-- TASK SPECIFICATION: COMPLETE; owner approved TASK-001 in the conversation.
-- TASK APPROVAL (original baseline): APPROVED by the owner’s explicit “approved” reply to TASK-001. Approval covers the documented proposed baseline; TBD choices remain unresolved and do not acquire assumed values. Each implementation task still requires its concrete specification and approval as stated in the breakdown.
-- STACK REVISION (2026-11-03): owner explicitly requested this stack and D1/D2/D3 documentation revision. It supersedes the previous stack proposal and authorizes specification/breakdown edits only, not implementation.
-- SMALL TASK BREAKDOWN: revised above; implementation details PENDING.
-- IMPLEMENTATION / TESTING (application) / INDEPENDENT PR REVIEW (application) / ISSUE RESOLUTION / FINAL APPROVAL / AUTHORIZED MERGE / POST-MERGE VERIFICATION: PENDING.
-- Document revision checks and independent document review: see execution log; these do not approve application implementation.
-- Specification self-check does not count as independent application review. No application or release readiness claimed.
 
-Owner approval recorded. Unresolved decisions remain TBD and block dependent work; next step is task 001-A decision closure and concrete implementation specifications. No commit, push, merge, or deployment is authorized.
+REQUEST/INVESTIGATION/SPECIFICATION REVISION/DOCUMENT-EDIT APPROVAL/BREAKDOWN REVISION COMPLETE under explicit latest user request. Earlier product/stack approvals historical; latest conflicting decisions supersede them. Every implementation task requires a concrete spec/approval. Application implementation/testing/review/issue resolution/final approval/authorized merge/post-merge verification PENDING; runtime checks BLOCKED by absent tooling/features. Document verification/review results in TASK-001-log.md. No implementation, commit, push, release or hosting research authorized or performed.
