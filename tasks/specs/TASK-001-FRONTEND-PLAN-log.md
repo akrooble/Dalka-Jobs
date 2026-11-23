@@ -1,0 +1,22 @@
+# Frontend completion plan execution log
+
+## 2026-11-03 — Numbered task generation
+- Owner requests a numbered Task 1/2/3 roadmap to complete the website frontend and complete admin panels. This authorizes planning documents only, not new application implementation or release.
+- Verified root D:/Dalka jobs Project/Dalka-Jobs, branch task/001-03b-local-database and current status. Preserved all existing public-preview and database work.
+- Reused verified architecture/tooling and read the current product role/permission, recruitment/privacy/finance and early-admin order evidence. Inspected actual app/component inventory and WEB-02 completion/verification limits. Public source is implemented; applicant and privileged panels are absent.
+- Created a 20-task frontend plan covering visitor, applicant, super admin, assigned recruiter and read-only company-admin roles. Each row has bounded scope, dependencies/original-ID mapping, proposed paths, acceptance/check focus and current status. Added common implementation steps/check commands and explicit backend/product gates.
+- Preserved password/TOTP versus applicant OTP, super-only job publication, no unpaid invoice gate, explicit CV/contact sharing, separate rejected-company view, private notes, CV/retention boundaries and applicant-free manual finance. No unresolved CV/recovery/rejected-sharing/finance rule silently chosen. No real applicant collection before safeguards/authority administration.
+- Documentation checks and independent plan review: PENDING. No application code, dependencies, service/data changes, commits, pushes or deployment.
+
+## Verification and independent review
+- Verified exactly 20 sequential task rows with consistent columns and no trailing whitespace in the two new documents. Directly inspected their content because ordinary git diff omits untracked files. git diff --check PASS with existing-file line-ending warnings. Git status confirms only these two planning artifacts were added in this turn; prior source/database changes preserved.
+- Added explicit public report/warning/verification-display coverage and real public SEO/external-application integration rather than assuming final QA creates those screens.
+- Initial independent review found FE-REV-001 MINOR: real public integration appeared only at final Task 20, after early admin entry, conflicting with original 001-11a prerequisites. Moved that explicit integration slice into Task 3 using B1/B2 and original 001-04/09–11; Task 5 depends on the live public slice, Tasks 6–7 follow, and Task 20 regression-checks the combined result.
+- Expanded Task 18 with exact invoice statuses/derived Overdue, single-currency/USD default, company/job links, issue/due dates and payment instructions. Clarified Task 10 prototype dependencies separately from live Task 14 authority administration to preserve safe sequencing without pretending mock screens permit intake.
+- Follow-up independent read-only roadmap review APPROVED with no remaining actionable findings. Reviewer confirmed git diff --check; no application tests were needed or executed for this documentation-only change.
+- Plan generation COMPLETE. Future implementation task specifications/approvals, unresolved policy/backend gates, final owner acceptance and all release operations remain pending. No source, package, database or service changes performed.
+## 4 November 2026: Prototype implementation status
+- Owner selected continuing the frontend roadmap, then explicitly chose fictional screen prototypes with live integration pending. Concrete scope and log: TASK-001-FE-PROTOTYPES.md and its execution log.
+- Updated the 20 existing rows without changing IDs/dependencies. Shared foundation source and 37 remaining screen designs now implemented; FE-12 design matrix recorded. Existing public preview reused. All live-service/policy dependencies persist; frontend-only prototypes do not implement auth/API/database services.
+- Verified 30 unit cases, lint/build/type checks and HTTP regression across 50 pages/50 link destinations/five expected 404s. Independent source review no findings; required browser QA and full review BLOCKED by capture/tooling evidence. No task is labelled fully live-complete.
+- No release or database execution authorised or performed; final owner acceptance and release phases remain PENDING. See implementation log for command results and preserved user-work boundaries.
