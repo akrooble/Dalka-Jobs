@@ -2,7 +2,9 @@
 
 ## Latest: full roadmap authorized; bounded source additions implemented
 
-Owner requested **“do it all”** on23 November. See [current local source guide](local-roadmap-23-nov.md), [execution log](../../tasks/specs/TASK-001-ALL-LOCAL-log.md), [independent review](../../tasks/specs/TASK-001-ALL-LOCAL-review.md) and [remaining decisions](../api/remaining-contracts-proposal.md). The current server requires owner-applied schema6. No database/setup/key/bootstrap/release operation was executed. All twenty tasks remain unaccepted; this work is not full roadmap completion.
+Owner requested **“do it all”** on23 November. See [current local source guide](local-roadmap-23-nov.md), [execution log](../../tasks/specs/TASK-001-ALL-LOCAL-log.md), [independent review](../../tasks/specs/TASK-001-ALL-LOCAL-review.md) and [remaining decisions](../api/remaining-contracts-proposal.md). The current server requires owner-applied schema6. No database/setup/key/bootstrap/merge/deployment operation was executed. All twenty tasks remain unaccepted; this work is not full roadmap completion.
+
+Owner subsequently authorized a GitHub update. Source commit `3dd8829` is pushed to `task/001-03b-local-database` and verified remotely; [draft PR #4](https://github.com/akrooble/Dalka-Jobs/pull/4) records the incomplete scope/checks. See [publication evidence](../../tasks/specs/TASK-001-GITHUB-UPDATE-log.md). Commit/push authorization supersedes earlier historical no-push wording for this branch only; no main merge/deployment occurred.
 
 | Area | New local deliverable | Remaining acceptance/source |
 | --- | --- | --- |

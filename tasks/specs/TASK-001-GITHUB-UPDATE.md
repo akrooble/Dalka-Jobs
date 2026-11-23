@@ -29,3 +29,5 @@ Medium publication scope because earlier application source is untracked. Exclud
 
 ## Approval / Lifecycle
 The owner's23 November request to update GitHub authorizes the necessary local commit and normal task-branch push/draft PR. This supersedes earlier no-commit/no-push status for this operation only. Request/investigation/specification/task approval COMPLETE; final checks/index inspection/commit/push/readback/draft PR PENDING. Main merge/deployment remain unauthorized; post-merge NOT APPLICABLE because no merge is requested.
+
+Publication update: source commit `3dd8829` was pushed normally and verified through GitHub readback; [draft PR #4](https://github.com/akrooble/Dalka-Jobs/pull/4) is open. Publication source acceptance COMPLETE; this receipt's follow-up documentation push is recorded in [execution log](TASK-001-GITHUB-UPDATE-log.md). Full roadmap acceptance remains blocked independently.
