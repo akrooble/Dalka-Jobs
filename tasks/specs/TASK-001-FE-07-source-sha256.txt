@@ -1,0 +1,21 @@
+﻿# FE-07 current source snapshot — 11 November 2026
+# Reconstructed current evidence; not the absent historical 10 November manifest.
+# SHA256  relative path; runtime acceptance remains BLOCKED.
+2d30281b54a183bf983b3e2852f09656e2cc4ba5556cb576414382f811f46e13  api/internal/httpapi/managed_lists.go
+ce70e598840d3dad1fee82dcf0eca3e8196b6a5e92e227dee64d695e64c63437  api/internal/httpapi/managed_lists_test.go
+c18a67b1fccadd4adacaca4f6293abe5f7db44e084ae43b4736ffa8bab011f62  api/internal/httpapi/admin_jobs.go
+b874cdddcf339bf44ef844259efa8bfb450e5325560e93fabbd55605a633a0c1  api/internal/httpapi/jobs.go
+deb826356532c8bc1160f278cbab5a499e8bacd739ba752d202d7bf4edf661ae  api/internal/httpapi/api.go
+278ae29d14eaad6e78b140f87180d8e7465e69acc96d80e792f649c9ff8c9d82  api/internal/httpapi/integration_test.go
+019f77c9fb209fd748762952dbc59b4ec1faec5ecebc64e36ff303c628e7af55  api/migrations/000003_managed_lists.up.sql
+4aaaa188829d5578c9a82c0d9e04587ae402bd917183d42d97a90902a6c94a25  api/migrations/000003_managed_lists.down.sql
+4df61d8cb4e1defaa762166fa327dbcd7716d02f365863660886a81cc03d9789  api/queries/first_five.sql
+920df00b5766c332472a5a43122bedbd9426f5e0d975ee1843a9e864666bc548  api/internal/store/first_five.sql.go
+b3a2a57c17eea85576f323d459165aec88be0a40a0ff195cca5c7dc890e11fa4  api/internal/store/models.go
+58f66dea9ed2356d5651b7bb1cbaa20fd389dae0e121126b5f1b64ef0d1f662d  api/cmd/server/main.go
+873e81418ee7f72edbedaacafba42f5fe76535c1e72a4b11f2312e0be880fea4  web/components/lists/list-manager.tsx
+3fc850f52cf2c581bfe98ec6386519a5adc1b9681bcc32903b1340cab29c4c60  web/app/admin/lists/page.tsx
+88aad6a54a36c93ccc607c4e272c5122d64ea9478193194ee992d5c8c203c4be  web/lib/api/client.ts
+5d075e3251ab0d993199f56516dc675cac1ca7b2ab4f7657478e5e7db12e2edd  web/tests/api-client.test.ts
+594096736db7f7c37419b74bb74c78fcefaf44f9f36b3122df9388f80e6b33db  web/tests/live-http.ts
+440c9a056a54c376b35e6641596535d4e1bc39586d51b98d8c69ad8df31ad203  docs/api/managed-lists.md

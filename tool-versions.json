@@ -3320,5 +3320,26 @@
     "result": "passed (owner-reported)",
     "reportedOn": "2026-11-03",
     "nodeChoice": "A approved: Node26.13.0/npm11.20.0"
+  },
+  "firstFiveTools": {
+    "verifiedOn": "2026-11-04",
+    "platform": "windows/amd64",
+    "sqlc": {
+      "version": "1.31.1",
+      "publishedAt": "2026-04-22T14:55:41Z",
+      "stable": true,
+      "ageEligible": true,
+      "source": "https://github.com/sqlc-dev/sqlc/releases/tag/v1.31.1",
+      "assetSHA256": "352711fa7dcb05dcdfefca0ad71b2c9a74fd090f8d7fc609419de4cbc725429f"
+    },
+    "migrate": {
+      "version": "4.20.1",
+      "publishedAt": "2026-09-09T06:21:49Z",
+      "stable": true,
+      "ageEligible": true,
+      "source": "https://github.com/golang-migrate/migrate/releases/tag/v4.20.1",
+      "assetSHA256": "bf68e2fdd1c8efd3cac59c6cb4cddca51546c402e3fc616172329d7686875ce8"
+    },
+    "runtimeNote": "sqlc generation and migrate version checked offline; no database migrations executed by agent"
   }
 }
